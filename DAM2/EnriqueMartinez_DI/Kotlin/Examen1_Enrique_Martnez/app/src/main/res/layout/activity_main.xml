@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:id="@+id/fondo"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/imagen_android"
+        android:layout_width="wrap_content"
+        android:layout_height="82dp"
+        android:scaleType="fitStart"
+        android:src="@drawable/header" />
+
+    <LinearLayout
+        android:layout_marginTop="300dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        >
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/edit_nombre"
+        android:inputType="text"
+        android:hint="Escribe tu nombre"
+        android:drawableLeft="@android:drawable/ic_menu_agenda"
+        />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        >
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/edit_apellido"
+            android:inputType="text"
+            android:hint="Escribe tu apellido"
+            android:drawableLeft="@android:drawable/ic_menu_agenda"
+            />
+
+    </LinearLayout>
+<android.widget.Switch
+    android:layout_width="100dp"
+    android:layout_height="41dp"
+    android:id="@+id/apagar"
+    android:hint="Aceptar"
+    android:layout_gravity="right"
+></android.widget.Switch>
+    <Button
+        android:layout_width="200dp"
+        android:layout_height="60dp"
+        android:layout_gravity="center"
+        android:hint="Empezar"
+        android:id="@+id/boton"
+        android:background="@color/purple_200"
+        ></Button>
+
+</LinearLayout>

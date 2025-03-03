@@ -1,0 +1,59 @@
+   // Declaramos una variable para la URL de los productos
+let urlProductos = "https://dummyjson.com/products/category/";
+
+// Seleccionamos el elemento "select" en el HTML
+let selectCategorias = document.querySelector("select");
+
+// Seleccionamos la fila de las tarjetas de productos en el HTML
+let filaCartas = document.querySelectorAll(".row .row")[1];
+
+// Declaramos una variable para almacenar la categoría seleccionada en el menú desplegable
+let categoriaSeleccionada;
+
+// Añadimos un evento "change" al elemento "select" para ejecutar la función "consultarProductos" cuando se cambie la selección
+selectCategorias.addEventListener("change", (e) => {
+  consultarProductos(e.target.value);
+  categoriaSeleccionada = e.target.value;
+});
+
+// Declaramos variables para elementos HTML relacionados con el carrito de compras
+let listaCarrito = document.getElementById("lista_carrito");
+let totalCarrito = document.getElementById("total_carrito");
+let numeroCompras = document.querySelector("h2");
+
+// Declaramos variables para el contenido y total del carrito de compras
+let lista = "";
+let total = 0;
+let totalCompras = 0;
+
+// Función para agregar un producto a la lista y al total del carrito de compras
+function agregarALista(title, price) {
+  lista += `<p>${title}  $${price}</p>`;
+  if (ver) listaCarrito.innerHTML = lista;
+  total += price;
+  totalCarrito.innerHTML = `<div class="col-8"><h2>Total: $${total}</h2></div>`;
+  totalCompras++;
+  numeroCompras.innerHTML = totalCompras;
+}
+
+// Función para consultar los productos de una categoría y mostrarlos en las tarjetas
+function consultarProductos(categoria, precio) {
+  // Limpiamos el HTML de las tarjetas de productos
+  filaCartas.innerHTML = "";
+
+  // Hacemos una solicitud a la URL de la categoría seleccionada
+  fetch(urlProductos + categoria)
+    .then((ok) => {
+      console.log(ok);
+      return ok.json();
+    })
+    .then((ok1) => {
+      // Declaramos una variable para contar la cantidad de productos que se muestran en las tarjetas
+      let con = 0;
+
+      // Declaramos un arreglo para almacenar los elementos de productos
+      let elements = [];
+
+      // Recorremos los productos de la categoría
+      ok1.products.forEach((element) => {
+        // Verificamos si se estableció un precio máximo y si el prec

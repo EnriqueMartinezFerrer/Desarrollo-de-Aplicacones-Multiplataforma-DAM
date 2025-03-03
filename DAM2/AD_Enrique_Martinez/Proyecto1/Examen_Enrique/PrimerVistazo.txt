@@ -1,0 +1,23 @@
+Atracciones:
+id
+nombre
+tematica
+
+
+Viajero:
+ID
+Edad:
+
+Viajes
+ID (clave primaria)
+Atracción (clave externa a la tabla "Atracciones")
+Viajero (clave externa a la tabla "Viajeros")
+Hora
+ 
+NavaPark quiere gestionar los viajes que se realizan en la multitud de atracciones que tiene, cada una de ellas tiene una temática singular. 
+Para el parque es muy importante guardar la edad de cada viajero. 
+Además quiere explotar cuantos han montado en cada atracción y a qué hora.
+Base de datos relacional y sus relaciones, que cubra las especificaciones del sistema
+Vista de control general:
+Se muestran los nombres de todas las atracciones del parque con la hora de todos sus viajes y la edad de los viajeros en cada viaje. 
+Páginas de gestión de las atracciones (listar,modificar,borrar,insertar)

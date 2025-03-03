@@ -1,0 +1,13 @@
+<div  class="row">
+  <div *ngFor="let item of vehiculos" class="card" style="width: 18rem; margin: 10px; padding: 2px;">
+    <img *ngIf="item.imagen !=''" src="{{item.imagen}}" class="card-img-top" alt="...">
+    <img *ngIf="item.imagen ==''" src="https://media.architecturaldigest.com/photos/61e70371c830527fda2b5c82/16:9/w_2991,h_1682,c_limit/Mercedes-EQXX-1%20%5BMercedes-Benz%5D%20copy.jpg" class="card-img-top" alt="...">
+
+    <div class="card-body">
+      <h5 class="card-title">{{item.nombre}}</h5>
+      <p class="card-text">{{item.marca}}</p>
+      <p class="card-text">{{item.cv}}</p>
+    </div>
+  </div>
+</div>
+

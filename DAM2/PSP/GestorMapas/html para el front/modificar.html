@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Modificar mapa</title>
+</head>
+<body>
+    <h1>Modificar mapa</h1>
+    <form id="modificar-form" enctype="multipart/form-data">
+        <label for="mapa">Mapa:</label>
+        <select id="mapa" name="mapa">
+            {% for mapa in mapas %}
+                <option value="{{ mapa.id }}">{{ mapa.nombre }}</option>
+            {% endfor %}
+        </select><br>
+        <label for="nombre">Nuevo nombre:</label>
+        <input type="text" id="nombre" name="nombre"><br>
+        <label for="descripcion">Nueva descripción:</label>
+        <textarea id="descripcion" name="descripcion"></textarea><br>
+        <label for="imagen">Nueva imagen:</label>
+        <input type="file" id="imagen" name="imagen"><br>
+        <button type="submit">Modificar mapa</button>
+    </form>
+    <script>
+        document.getElementById('modificar-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            var mapa_id = document.getElementById('mapa').value;
+            var nombre = document.getElementById('nombre').value;
+            var descripcion = document.getElementById('descripcion').value;
+            var imagen = document.getElementById('imagen').files[0];
+            var form_data = new FormData();
+            if (nombre) {
+                form_data.append('nombre', nombre);
+            }
+            if (descripcion) {
+                form_data.append('descripcion', descripcion);
+            }
+            if (imagen) {
+                form_data.append('imagen', imagen);
+            }
+            fetch('/mapas/' + mapa_id, {
+                method: 'PUT',
+                body: form_data
+            })
+            .then(function(response) {
+                if (response.ok) {
+                    alert('El mapa ha sido modificado correctamente');
+                    window.location.href = '/modificar';
+                } else {
+                    alert('Ha ocurrido un error al modificar el mapa');
+                }
+            })
+            .catch(function(error) {
+                alert('Ha ocurrido un error al modificar el mapa: ' + error);
+            });
+        });
+    </script>
+</body>
+</html>

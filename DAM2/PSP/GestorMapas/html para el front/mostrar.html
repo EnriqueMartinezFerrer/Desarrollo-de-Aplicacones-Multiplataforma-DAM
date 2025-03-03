@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Mostrar mapas</title>
+</head>
+<body>
+    <h1>Mapas</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Imagen</th>
+                <th>Nombre</th>
+                <th>Descripción</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for mapa in mapas %}
+                <tr>
+                    <td><img src="{{ mapa.imagen }}" width="100"></td>
+                    <td>{{ mapa.nombre }}</td>
+                    <td>{{ mapa.descripcion }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Practica_Hobbys</string>
+    <string name="Practica_Listas_EnriqueMartinez" />
+    <string-array name="lista_spinner">
+        <item>Todos</item>
+        <item>Futbol</item>
+        <item>Series</item>
+        <item>Juegos</item>
+    </string-array>
+</resources>

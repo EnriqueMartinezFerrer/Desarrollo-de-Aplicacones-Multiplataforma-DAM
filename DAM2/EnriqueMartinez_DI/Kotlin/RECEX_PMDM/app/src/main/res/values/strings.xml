@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">RECEX_PMDM</string>
+    <string-array name="dar">
+        <item>Euro</item>
+        <item>Dolares</item>
+        <item>Libras</item>
+    </string-array>
+    <string-array name="devuelve">
+        <item>Euro</item>
+        <item>Dolares</item>
+        <item>Libras</item>
+    </string-array>
+</resources>

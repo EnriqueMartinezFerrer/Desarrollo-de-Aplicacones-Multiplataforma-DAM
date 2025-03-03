@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/menu_add_favorite"
+        android:title="Agregar a favorito"/>
+
+    <item
+        android:id="@+id/menu_game_detail"
+        android:title="Ver detalle"/>
+
+</menu>

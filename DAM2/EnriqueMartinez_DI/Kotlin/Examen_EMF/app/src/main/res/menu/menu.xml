@@ -1,0 +1,19 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/menu_filter"
+        android:title="Filtrar plataformas"
+        app:showAsAction="ifRoom"/>
+
+    <item
+        android:id="@+id/menu_favorites"
+        android:title="Ver favoritos"
+        app:showAsAction="ifRoom"/>
+
+    <item
+        android:id="@+id/menu_clear_filters"
+        android:title="Borrar filtros"
+        app:showAsAction="never"/>
+
+</menu>

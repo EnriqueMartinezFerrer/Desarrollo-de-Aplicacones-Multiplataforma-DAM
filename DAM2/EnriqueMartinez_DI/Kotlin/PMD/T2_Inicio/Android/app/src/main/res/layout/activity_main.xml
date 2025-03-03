@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:padding="@dimen/paddingGeneral"
+    >
+
+
+    <TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/saludo"
+    android:textSize="@dimen/text_big"
+    android:layout_gravity="center"
+    android:id="@+id/texto_inicial" />
+
+    <TextView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/marginTop"
+    android:textSize="@dimen/text_small"
+    android:textAlignment="center"/>
+
+    <Button
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/marginTop"
+    android:text="@string/boton_pulsar"
+    android:layout_gravity="center"
+    android:id="@+id/boton_inicial"
+    />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/marginTop"
+        android:hint="@string/hint_nombre"
+        android:inputType="text"
+        android:drawableLeft="@android:drawable/ic_menu_agenda"
+        android:drawablePadding="@dimen/marginTop"
+        android:id="@+id/edit_nombre"
+    />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/marginTop"
+        android:src="@drawable/shocked"
+        android:scaleType="fitCenter"
+        android:id="@+id/imagen_estado"
+    />
+
+</LinearLayout>

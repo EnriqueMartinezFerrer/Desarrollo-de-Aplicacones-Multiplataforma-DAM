@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    tools:context=".MainActivity"
+    android:background="@drawable/fondo_cartas">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+
+        >
+
+        <Button
+            android:id="@+id/botonInicial"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Empezar"
+            android:textColor="@color/black"/>
+        <EditText
+            android:id="@+id/nombre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="INTRODUCE TU NOMBRE"
+            android:textColorHint="@color/white"/>
+
+</LinearLayout>
+</LinearLayout>

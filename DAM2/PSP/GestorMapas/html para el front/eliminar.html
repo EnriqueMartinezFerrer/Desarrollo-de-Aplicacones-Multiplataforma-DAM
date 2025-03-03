@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Eliminar mapa</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        function eliminarMapa() {
+            var id = $('#mapa').val();
+            $.ajax({
+                url: '/eliminar/' + id,
+                type: 'DELETE',
+                success: function(response) {
+                    alert(response);
+                },
+                error: function(xhr, status, error) {
+                    alert('Error al eliminar el mapa');
+                }
+            });
+        }
+    </script>
+</head>
+<body>
+    <h1>Eliminar mapa</h1>
+    <form>
+        <label for="mapa">Selecciona un mapa:</label>
+        <select id="mapa" name="mapa">
+            {% for mapa in mapas %}
+                <option value="{{ mapa.id }}">{{ mapa.nombre }}</option>
+            {% endfor %}
+        </select>
+        <br>
+        <button type="button" onclick="eliminarMapa()">Eliminar mapa</button>
+    </form>
+</body>
+</html>

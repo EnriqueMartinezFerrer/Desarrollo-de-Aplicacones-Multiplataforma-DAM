@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="paddingGeneral">20dp</dimen>
+    <dimen name="marginTop">30dp</dimen>
+    <dimen name="texto_pequenio">20sp</dimen>
+    <dimen name="texto_medio">30sp</dimen>
+    <dimen name="texto_grande">40sp</dimen>
+</resources>

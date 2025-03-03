@@ -1,0 +1,31 @@
+body, button, input {
+    font: 16px Arial;
+    color: #000000;
+    user-select: none;
+}
+
+.casilla {
+    width: 40px;
+    height: 40px;
+    font: 16px Arial;
+    outline: none;
+    text-align: center;
+    border: 1px solid #005085;
+    background-color: #0099ff;
+    user-select: none;
+}
+
+.bola {
+    border-radius: 100%;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    background-color: #ffeca7;
+    font: 20px Arial;
+    border: 2px solid #afa16e;
+    margin: 10px;
+}
+
+.ganancias {
+    border: none;
+}
