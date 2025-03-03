@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!-- PGTA1.xml -->
+<catalogo  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:noNamespaceSchemaLocation="PGTA1.xsd">
+ 
+	 <producto>
+	  	<calidad valor="9" />
+		  <nombre>Mesa THYO</nombre>
+		  <referencia>3948</referencia> 
+		  <stock>3</stock>
+		  <precio>60</precio>
+	 </producto>
+	
+    <producto>
+		   <calidad valor="7" />
+	  	 <nombre>Silla THYO</nombre>
+		   <referencia>5343</referencia>
+		   <stock>8</stock>
+	  	 <precio>90</precio>
+	 </producto>
+	 
+</catalogo>

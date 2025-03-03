@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- Ejercicio: PR3_004_PGTA.xml -->
+<!DOCTYPE albumesMortadelo [
+  <!ELEMENT albumesMortadelo (album, album, album, album)>
+  <!ELEMENT album (nombre)>
+    <!ELEMENT nombre  (#PCDATA)>
+]> 
+
+<albumesMortadelo>
+  <album>
+  <nombre>El sulfato atomico</nombre>
+  </album>
+  <album>
+  <nombre>La caja de diez cerrojos</nombre>
+  </album>
+  <album>
+  <nombre>El otro yo del profesor Bacterio</nombre>
+  </album>
+  <album>
+  <nombre>Los cacharros majaretas</nombre>
+  </album>
+</albumesMortadelo>
+
+
+
+

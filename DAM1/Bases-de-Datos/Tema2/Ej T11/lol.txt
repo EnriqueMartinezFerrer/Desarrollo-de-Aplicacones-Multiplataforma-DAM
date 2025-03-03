@@ -1,0 +1,17 @@
+private Sub cmd_Modificar_Click()
+Private Sub cmd_GuardarClick()
+If IsNull(txtNombre) Or IsNull(txtDireccion) 
+    Or IsNull(txtTel) Or IsNull(txtCel) Or IsNull(txtEmail) Then
+        MsgBox "Debe completar todos los campos", , "CLIENTES"
+    Exit Sub
+End If
+
+Recordset.Edit
+Recordset.Fields("") = 
+Recordset.Fields("") = 
+Recordset.Fields("") = 
+Recordset.Fields("") =.value
+Recordset.Fields("") = 
+Recordset.Update
+    MsgBox "Registro Modificado correctamente", vbInformation, "Clientes"
+End Sub

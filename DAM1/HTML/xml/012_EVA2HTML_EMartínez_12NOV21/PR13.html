@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+</head>
+<body>
+<form action="mailto:pepito@terra.es" method="post" enctype="text/plain">
+	<fieldset>
+		<legend><font color="blue">Datos basicos</font></legend>
+		Nombre<br><input type="text" name="Nombre" size="50">
+		<br><br><label for="Hombre">Hombre</label>
+		<input type="radio" name="Sexo" id="Hombre">
+
+		<label for="Mujer">Mujer</label>
+		<input type="radio" name="Sexo" id="Mujer">
+
+	</fieldset>
+	<fieldset>
+	<br><br>
+
+		Descripcion<br>
+		<textarea name="Descripcion" cols="40" rows="5"></textarea><br><br>
+
+		Foto<input type="file" name="archivoasubir[]" multiple accept="image/png, .jpeg .jpg, image/gif"><br><br>
+
+		<input type="checkbox" name="visitas">&nbsp;agregar contador de visitas
+
+	</fieldset>
+	<fieldset>
+		<legend><font color="blue">Datos economicos</font></legend>
+		Precio &nbsp;<input type="text" name="precio" size="9">&nbsp;€&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Impuestos&nbsp;
+		<select name="impuestos" size="1" >
+			<option selected>4%</option>
+			<option>10%</option>
+			<option>18%</option>
+			<option>21%</option>
+		</select>
+
+		<br><br><br>
+		Promocion<br>
+		<input type="radio" name="promocion" checked>&nbsp;Ninguno<br>
+		<input type="radio" name="promocion">&nbsp;Transporte gratuito<br>
+		<input type="radio" name="promocion">&nbsp;Descuento 5%<br>
+		<a href="./pag1.html"><img src="./imagenes/IraPag1.gif"></a><br><br>
+		<a href="./pag3.html"><img src="./imagenes/IraPag3.gif"></a><br><br>
+		<a href="./pag4.html"><img src="./imagenes/IraPag4.gif"></a>
+
+
+	</fieldset>
+
+</form>
+</body>
+</html>
+
+

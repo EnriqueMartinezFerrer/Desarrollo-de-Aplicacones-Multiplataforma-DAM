@@ -1,0 +1,83 @@
+//ENRIQUE MARTÍNEZ FERRER
+EJERCICIO 1
+use liga
+
+update ignore jugador j
+inner join (select equipo,avg(altura) `media` from jugador group by 1) j2
+using(equipo)
+set salario=salario + 100
+where salario < media
+and id_capitan IS NULL;
+
+EJERCICIO 2
+use liga
+
+DELIMITER $$
+CREATE OR REPLACE PROCEDURE emf2(a INT,b INT,c INT) READS SQL DATA
+BEGIN
+SET sel = CONCAT("select e.EQUIPO,
+id_equipo  AS 'EQUIPO',
+COUNT(id_jugador) AS 'Nº DE JUGADORES' FROM equipo e INNER JOIN jugador j ON SALARIO MEDIO(avg(salario_medio))=",SALARIO MEDIO,";
+PREPARE s FROM sel;
+
+
+
+
+
+EJERCICIO 3
+use BD2
+
+DELIMITER $$
+CREATE OR REPLACE FUNCTION emf3(k ROW TYPE OF COCHES) RETURNS INT(2) MODIFIES SQL DATA
+BEGIN
+IF k.matricula IS NULL THEN RETURN -1;
+END IF;
+IF EXISTS(SELECT * FROM coches WHERE k.matricula = matricula) 
+	THEN RETURN -2;
+END IF;
+IF k.codigo IS NULL 
+	then return -3;
+END IF;
+IF k.codigo in(SELECT codigo FROM marcas_modelos) 
+	then return -4;
+END IF;
+IF CONCAT(k.propietario_nombre,k.propietario_apellido) IS NOT NULL AND NOT EXISTS(select * from conductores where concat(k.propietario_nombre,k.propietario_apellido)=concat(nombre,apellidos)) 
+	then return -5;
+END IF;
+IF k.numero_de_puertas IS NOT NULL and k.numero_de_puertas NOT between 2 and 5 
+	then return -6;
+END IF;
+IF k.color IS NOT NULL and k.color NOT IN("negro","blanco","rojo","verde","amarillo","azul") 
+	then return -7;
+END IF;
+INSERT IGNORE INTO coches values(k.matricula,k.codigo,k.propietario_nombre,k.propietario_apellido,k.color,k.numero_de_puertas);
+	return ROW_COUNT();
+END $$
+DELIMITER ;
+
+EJERCICIO 4
+
+USE liga;
+DELIMITER $$
+CREATE OR REPLACE TRIGGER emf4_update AFTER UPDATE ON partido FOR EACH ROW
+BEGIN
+IF SUBSTRING_INDEX(OLD.resultado,'-',1)>SUBSTRING_INDEX(OLD.resultado,'-',-1) then
+update equipo SET puntos=puntos-3 WHERE id_equipo=OLD.local;
+update equipo SET puntos=puntos-1 WHERE id_equipo=OLD.visitante;
+update equipo SET puntos=puntos+IF(SUBSTRING_INDEX(NEW.resultado,'-',1)>SUBSTRING_INDEX(NEW.resultado,'-',-1),3,1) where id_equipo=NEW.local;
+update equipo SET puntos=puntos+IF(SUBSTRING_INDEX(NEW.resultado,'-',1)<SUBSTRING_INDEX(NEW.resultado,'-',-1),3,1) where id_equipo=NEW.visitante;
+END IF;
+IF SUBSTRING_INDEX(OLD.resultado,'-',1)=SUBSTRING_INDEX(OLD.resultado,'-',-1) then
+update equipo SET puntos=puntos-1 WHERE id_equipo=OLD.local;
+update equipo SET puntos=puntos-1 WHERE id_equipo=OLD.visitante;
+update equipo SET puntos=puntos+IF(SUBSTRING_INDEX(NEW.resultado,'-',1)>SUBSTRING_INDEX(NEW.resultado,'-',-1),3,1) where id_equipo=NEW.local;
+update equipo SET puntos=puntos+IF(SUBSTRING_INDEX(NEW.resultado,'-',1)<SUBSTRING_INDEX(NEW.resultado,'-',-1),3,1) where id_equipo=NEW.visitante;
+END IF;
+IF SUBSTRING_INDEX(OLD.resultado,'-',1)<SUBSTRING_INDEX(OLD.resultado,'-',-1) then
+
+DELIMITER ;
+
+
+
+
+

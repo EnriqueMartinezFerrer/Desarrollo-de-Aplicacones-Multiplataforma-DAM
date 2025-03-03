@@ -1,0 +1,9 @@
+1. /fp/nombre
+2. /fp/web/text()
+3. /fp/ciclos//nombre//text()
+4. //ciclo/@*
+5. /fp/ciclos//ciclo//decretoTitulo/@*
+6. /fp/ciclos/ciclo[@id="SMR"]
+7. //ciclo[grado="Superior"]/nombre
+8. //ciclo[decretoTitulo/@año < 2010]/nombre/text()
+9. //ciclo[decretoTitulo/@año = 2010 or decretoTitulo/@año = 2008]/nombre/text()

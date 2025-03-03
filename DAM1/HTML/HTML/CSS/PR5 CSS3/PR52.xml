@@ -1,0 +1,16 @@
+﻿﻿<?xml version="1.0" encoding="UTF-8"?>
+ <!-- Ejercicio: PR05-002.xml --> 
+<coleccion 
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:noNamespaceSchemaLocation="A05-002.xsd"> 
+   <objeto>
+       <nombre>Moneda</nombre>
+       <numero>7483</numero>
+       <fecha>1916-08-02</fecha>
+   </objeto>
+    <objeto>
+       <nombre>Periódico</nombre>
+       <numero>4355</numero>
+       <fecha>1958-10-30</fecha>
+   </objeto>
+</coleccion>

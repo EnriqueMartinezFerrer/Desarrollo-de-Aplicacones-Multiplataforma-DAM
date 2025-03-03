@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+            <xs:element name="alumnos">
+              <xs:complexType>
+                  <xs:sequence>
+                  <xs:element name="alumno">
+              <xs:complexType>
+                  <xs:sequence>
+                  <xs:element name="nombre">
+                  <xs:complexType>
+                  <xs:sequence>
+                  <xs:element name="direccion">
+              <xs:complexType>
+                  <xs:sequence>
+                      <xs:element name="calle" >
+                        <xs:complexType>
+                          <xs:all>
+                       <xs:element name="numero" minOccurs="0" maxOccurs="500">
+                        <xs:complexType>
+                          <xs:all>
+                          <xs:element type="xs:string" name="nombre"/>
+                          <xs:element name="telefono">
+                                   <xs:simpleType>
+                                       <xs:restriction base="xs:integer">
+                                          <xs:minInclusive value="0"/>
+                                         <xs:maxInclusive value="5"/>
+                                     </xs:restriction>
+                                  </xs:simpleType>
+                        </xs:element>
+                        <xs:element type="xs:date" name="fecha"/>
+                        <xs:element type="xs:string" name="publicado"/>
+                        <xs:element name="clasificacion">
+                        <xs:complexType>
+                            <xs:simpleContent>
+                                <xs:extension base="xs:string">
+                                <xs:attribute name="perfil_politico" use="optional">
+                                 <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                            <xs:pattern value="Badajoz|Cáceres"/>
+                           </xs:restriction>
+                           </xs:simpleType>
+                           </xs:attribute>
+                        </xs:extension>
+                        </xs:simpleContent>
+                        </xs:complexType>
+                        </xs:element>
+                    </xs:all>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+          </xs:element>
+    </xs:schema>

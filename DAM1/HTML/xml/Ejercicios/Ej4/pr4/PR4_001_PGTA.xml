@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<!-- Ejercicio: PR4_001.xml -->
+<!DOCTYPE clima [
+  <!ELEMENT clima (ciudad+)>
+  <!ELEMENT ciudad (nombre+, reporte+)>
+  <!ELEMENT nombre (#PCDATA)>
+  <!ELEMENT reporte (alta+,baja+,precip+)>
+  <!ELEMENT alta (#PCDATA)>
+  <!ELEMENT baja (#PCDATA)>
+  <!ELEMENT precip (#PCDATA)>
+  ]>
+  
+<clima>
+   <ciudad>
+      <nombre>Madrid</nombre> 
+      <reporte>
+         <alta>27</alta>
+         <baja>18</baja>
+         <precip></precip>
+      </reporte>
+   </ciudad>
+   <ciudad>
+        <nombre>Barcelona</nombre>
+         <reporte>
+            <alta>28</alta>
+            <baja>15</baja>
+            <precip></precip>
+         </reporte>
+  </ciudad>
+</clima>

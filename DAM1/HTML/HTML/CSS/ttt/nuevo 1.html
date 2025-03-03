@@ -1,0 +1,142 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+	<head>
+		<title>LENGUAJES DE MARCAS - PGTA1</title>
+		<link rel="StyleSheet" type="text/css" href="pgta1.css">
+		<meta name="author" content="Curso_XML-2020">
+	</head>
+	<body>
+		<!--
+		Estructura de la página: 
+		------------------------------------------------------
+		div cuerpo:			
+			div titulo
+				Titulo
+			div menu_sup
+				elementos del menu
+			div contenido
+				contenidos de la página + 3 Columnas
+			div pie
+				pie de pagina
+		------------------------------------------------------
+		Curso_Xml - 2022 -->
+		<!-- CAPA cuerpo que contiene a todo el documento-->
+		<div id="cuerpo">
+			<!-- CAPA titulo (contenida en la CAPA cuerpo) que contiene al título del documento y un logo de Retamar (logoreta.jpg)-->
+			<div id="titulo">
+			   <img class="logo" src="logoreta.jpg">   
+				<h1>Lenguajes de Marcas & Portales de Informacion</h1>
+				<h2>Colegio Retamar - Curso_XML 2022</h2>
+				
+			</div>
+			<!-- CAPA menú superior (contenida en la CAPA cuerpo) -->
+			<div id="menu_sup">
+				<!-- tabla que contiene cada uno de los elementos del menú superior -->
+				<table>
+					<tr>
+						<td>Inicio</td>
+						<td>Juegos</td>
+						<td>Noticias</td>
+						<td>Descargas</td>
+						<td>Avances</td>
+						<td>Varios</td>
+						<td>Contactanos</td>
+					</tr>
+				</table>
+			</div>
+			<!-- CAPA contenido (contenida en la CAPA cuerpo) -->
+			<div id="contenido">
+				<!-- Título de la Noticia-->
+				<h1>Las Hojas de Estilos en Cascada</h1> 
+				<!--línea separadora-->
+				<hr class="separador">
+				<!-- realización y comentarios sobre la noticia -->
+				<h3>Realizado por: D. Ciro</h3>
+				<!--línea separadora-->
+				<hr class="separador lineafina">
+				<!--párrafos de la noticia-->
+				<p class="enfatizado">
+					Este texto lo he sacado de Wikipedia:
+				</p>
+				<p>
+					Las <b>hojas de estilo en cascada</b> (Cascading Style Sheets, CSS) son un lenguaje formal usado 
+					para definir la presentacion de un documento estructurado escrito en <b>HTML</b> o <b>XML</b> (y por extension
+					en <b>XHTML</b>). El <b>W3C</b> (World Wide Web Consortium) es el encargado de formular la especificacion de
+					las hojas de estilo que serviran de estandar para los agentes de usuario o navegadores.
+				</p>
+				<p>
+					La idea que se encuentra detras del desarrollo de CSS es separar la estructura de un documento
+					de su presentacion.
+				</p>
+				<p> <img src="css1.jpg">
+					Por ejemplo, el elemento de HTML < H1> indica que un bloque de texto es un encabezamiento
+					y que es mas importante que un bloque etiquetado como < H2>. Versiones mas antiguas de HTML
+					permitiran atributos extra dentro de la etiqueta abierta para darle formato (como el color o el tamaño de fuente). 
+					No obstante, cada etiqueta < H1> debia disponer de la informacion si se deseaba un diseño
+					consistente para una pagina, y ademas, una persona que lea esa pagina con un navegador 
+					pierde totalmente el control sobre la visualizacion del texto.
+				</p>
+				<p>
+					
+					Cuando se utiliza <b>CSS</b>, la etiqueta < H1> no deberian proporcionar informacion, sobre como va a ser
+					visualizado, solamente marca la estructura del documento. La informacion de estilo separada en una
+					hoja de estilo, especifica como se ha de mostrar < H1>: color, fuente, alineacion del texto, tamaño,
+					y otras caracteristicas no visuales como definir el volumen de un sintetizador de voz (vease Sintetizacion
+					del habla), por ejemplo.
+				</p>
+				<!-- El siguiente parrafo debe estar siempre debajo de la imagen -->
+				<p class=libre1>	
+					La informacion de estilo puede ser adjuntada tanto como un documento
+					separado o en el mismo documento HTML. En este ultimo caso podrian definirse
+					estilos generales en la cabecera del documento o en cada etiqueta particular
+					mediante el atributo "style".CSS está diseñado principalmente para marcar la
+					separación del contenido del documento y la forma de presentación de este, 
+					características tales como las capas o layouts, los colores y las fuentes.</p>
+				<!-- aqui deberia empezar la primera columna -->	
+				
+				<p>	
+					Esta separación primera busca mejorar la accesibilidad del documento, proveer más flexibilidad
+					y control en la especificación de características presentacionales, permitir que varios 
+					documentos HTML compartan un mismo estilo usando una sola hoja de estilos separada en un
+					archivo .css, y reducir la complejidad y la repetición de código en la estructura del documento.
+					<br><br><br>
+					
+				</p>
+				
+				<!-- aqui deberia empezar la segunda columna -->
+				
+				<p>	
+					Esta separación segunda busca mejorar la accesibilidad del documento, proveer más flexibilidad
+					y control en la especificación de características presentacionales, permitir que varios 
+					documentos HTML compartan un mismo estilo usando una sola hoja de estilos separada en un
+					archivo .css, y reducir la complejidad y la repetición de código en la estructura del documento.
+					<br><br><br>					
+				</p>
+				
+				<!-- aqui deberia empezar la tercera columna  que debe contener la imagen css2.jpg -->
+				
+				<p>	
+					Esta separación tercera busca mejorar la accesibilidad del documento, proveer más flexibilidad
+					y control en la especificación de características presentacionales, permitir que varios 
+					documentos HTML compartan un mismo estilo usando una sola hoja de estilos separada en un
+					archivo .css, y reducir la complejidad y la repetición de código en la estructura del documento.
+				</p>
+				</div>
+				<!--párrafo que contiene un enlace de tipo "a" -->
+				<br><br><br><br><br><br>
+				<p>	
+					Informacion obtenida de <a href="http://es.wikipedia.org" target="_blank">Wikipedia</a>
+				</p>
+				<!-- línea de la clase separador y de la clase lineafina -->
+				<hr class="separador lineafina">
+				<!--cabecera de título contenida en la capa Contenido-->
+				<h3>Fecha: 22/04/2022</h3>
+			</div>
+			<!--CAPA pie corresponidiente al pie de página (contenida en la CAPA cuerpo) -->
+			<div id="pie">
+				<p>Dpto. Informacion - Colegio Retamar</p>
+				<p class="especial">Ejercicio creado para los alumnos del modulo DAM1</p>
+			</div>
+		</div>
+	</body>
+</html>

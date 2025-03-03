@@ -1,0 +1,17 @@
+INSERT INTO copia_equipos
+select* from equipo where
+id_equipo in
+(select equipo from
+    jugador group by 1 having avg(salario)<
+    (select avg(salario) from
+    jugador where equipo =
+    (select id_equipo from
+    equipo where nombre=
+    "Real Madrid")));
+ej 13
+update ignore jugador j
+inner join(select equipo, AVG(salario) media from jugador group by 1) j2
+on j.equipo =j2.equipo
+SET salario = salario-100
+where salario > 100
+p

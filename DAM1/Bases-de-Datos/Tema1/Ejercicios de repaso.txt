@@ -1,0 +1,167 @@
+EJERCICIO 1
+-----------
+USE liga;
+SELECT CONCAT_WS(" ", nombre, apellido) AS "JUGADOR",
+	altura AS "ALTURA"
+FROM jugador
+WHERE nombre IS NOT NULL AND apellido IS NOT NULL AND altura IS NOT NULL AND
+altura = (
+	SELECT MAX(altura) FROM jugador
+);
+
+
+
+EJERCICIO 2
+-----------
+USE liga;
+SELECT equipo AS "EQUIPO",
+	SUM(altura) AS "ALTURA"
+FROM jugador
+WHERE altura IS NOT NULL AND equipo IS NOT NULL AND
+equipo IN (
+	SELECT id_equipo
+	FROM equipo
+	WHERE nombre IN ("CAI Zaragoza", "Real Madrid")
+) GROUP BY 1;
+
+
+
+EJERCICIO 3
+-----------
+USE liga;
+SELECT CONCAT_WS(" ", nombre, apellido) AS "JUGADOR",
+	equipo AS "EQUIPO"
+FROM jugador
+WHERE equipo = (
+	SELECT local
+	FROM partido
+	WHERE visitante = (
+		SELECT id_equipo
+		FROM equipo
+		WHERE nombre="P.E. Valencia"
+	)
+);
+
+
+
+EJERCICIO 4
+-----------
+USE liga;
+CREATE OR REPLACE VIEW repeticiones_puntos AS 
+SELECT id_equipo AS "equipo",
+	IF(id_equipo=local, SUBSTRING_INDEX(resultado,"-",1), SUBSTRING_INDEX(resultado,"-",-1)) AS "PUNTOS",
+	COUNT(*) AS "VECES"
+FROM equipo e INNER JOIN partido p ON id_equipo IN (local, visitante)
+GROUP BY 1,2;
+
+SELECT puntos AS "PUNTOS MÁS REPETIDOS"
+FROM repeticiones_puntos
+WHERE equipo = (
+	SELECT id_equipo
+	FROM equipo
+	WHERE nombre="P.E. Valencia" AND veces=(
+		SELECT MAX(veces)
+		FROM repeticiones_puntos WHERE equipo=(
+			SELECT id_equipo
+			FROM equipo
+			WHERE nombre="P.E. Valencia"
+		)
+	)
+);
+
+
+
+EJERCICIO 5
+-----------
+USE liga;
+SELECT CONCAT_WS(" ", nombre, apellido) AS "JUGADOR",
+	altura AS "ALTURA"
+FROM jugador
+WHERE altura > (
+	SELECT MAX(altura)
+	FROM jugador
+	WHERE equipo = (
+		SELECT id_equipo
+		FROM equipo
+		WHERE nombre="Caja Laboral"
+	)
+);
+
+
+
+EJERCICIO 6
+-----------
+USE liga;
+SELECT equipo AS "EQUIPO",
+	CONCAT_WS(" ", nombre, apellido) AS "JUGADOR",
+	salario AS "SALARIO"
+FROM jugador j
+WHERE salario < (
+	SELECT MIN(salario)
+	FROM jugador
+	WHERE equipo=j.equipo
+	AND id_jugador=id_capitan
+);
+
+
+
+EJERCICIO 9
+-----------
+USE liga;
+SELECT CONCAT_WS(" ", nombre, apellido) AS "JUGADOR",
+	salario AS "SALARIO"
+FROM jugador
+WHERE nombre IS NOT NULL AND apellido IS NOT NULL AND salario IS NOT NULL AND
+salario IN (
+	(SELECT MIN(salario) FROM jugador),
+	(SELECT MAX(salario) FROM jugador)
+) GROUP BY 1;
+
+
+
+EJERCICIO 10
+------------
+CREATE OR REPLACE VIEW contrarios AS
+SELECT DISTINCT id_equipo AS "EQUIPO",
+	IF(id_equipo=p.local, visitante, local) AS "CONTRARIO"
+FROM equipo e INNER JOIN partido p ON id_equipo IN (local, visitante)
+ORDER BY id_equipo;
+
+SELECT EQUIPO
+FROM contrarios
+GROUP BY EQUIPO
+HAVING COUNT(*) + 1 = (
+	SELECT COUNT(*)
+	FROM equipo
+);
+
+
+
+EJERCICIO 11
+------------
+USE liga;
+SELECT j.nombre AS "JUGADOR",
+	j.posicion AS "PUESTO",
+	e.nombre AS "EQUIPO"
+FROM jugador j INNER JOIN equipo e ON equipo = e.id_equipo;
+
+
+
+EJERCICIO 12
+------------
+USE liga;
+SELECT e.id_equipo AS "ID EQUIPO",
+	e.nombre AS "NOMBRE",
+	COUNT(local) AS "Nº DE PARTIDOS"
+FROM partido p INNER JOIN equipo e ON e.id_equipo=local
+GROUP BY 1,2;
+
+
+
+EJERCICIO 13
+------------
+USE liga;
+SELECT e.nombre AS "EQUIPO"
+FROM equipo e INNER JOIN jugador j ON id_equipo=equipo
+GROUP BY id_equipo
+HAVING COUNT(*) > 3;

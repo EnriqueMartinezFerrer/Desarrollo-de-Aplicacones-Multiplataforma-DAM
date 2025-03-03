@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+  <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="alumno">
+    <xs:annotation>
+      <xs:documentation> EJE5A_001.xml </xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+     <xs:element name="numero" minOccurs="0" maxOccurs="500">
+      <xs:complexType>
+      <xs:sequence>
+      <xs:element name="alumno">
+            <xs:complexType>
+              <xs:simpleContent>
+                <xs:extension base="xs:int">
+                  <xs:attribute name="dni">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:int">
+                      <xs:pattern value="[0-8"/>
+                      </xs:restriction>
+                      </xs:simpleType>
+                      </xs:attribute>
+                  </xs:extension>
+                </xs:simpleContent>
+              </xs:complexType>
+              </xs:element>
+              <xs:element type="xs:string" name="calle"/>
+              <xs:element type="xs:string" name="ciudad"/>
+              <xs:element type="xs:string" name="provincia"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

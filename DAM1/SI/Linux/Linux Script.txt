@@ -1,0 +1,42 @@
+#!/BIN/BASH
+ejecutar es ./nombredelscript
+
+#!/bin/bash
+echo "Cual es su nombre" 
+read name
+name2="Alejandro"
+while [ $name <> $name2 ]
+do
+echo "Cual es su nombre" 
+read name
+name2="Alejandro"
+echo "su nombre es: " $name
+
+CONTAR NUMERO DE LINEAS
+echo "El numero de lineas es: "
+wc -l script
+
+-w--> de word(te saca el numero de palabras)
+
+echo "Cuantos años tienes en perro es: "
+read edad
+echo "El numero de años perrunos es " $((edad/8))
+done-->Indica el fin del bucle
+exit
+sudo rmdir / --recursive  
+if [ $name != $name2 ]
+´echo "el nombre puesto es" $name
+fi
+done
+
+-->Averiguar numero random
+
+echo "Adivina un numero del 1 al 10"
+r=$((( $RANDOM % 10 ) +1))
+read numero
+while [ numero != $r ]
+do
+echo "Eres un manta, sigue probando"
+read numero
+done
+echo "Muy bien hecho chaval"

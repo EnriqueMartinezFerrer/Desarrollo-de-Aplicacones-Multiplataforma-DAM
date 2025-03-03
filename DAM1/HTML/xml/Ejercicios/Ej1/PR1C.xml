@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE alumnos [
+	<!ELEMENT alumnos (alumno, alumno)>
+	<!ELEMENT alumno (nombre, expediente, nota1, nota2, nota3, notafinal)>
+	<!ELEMENT nombre (#PCDATA)>
+	<!ELEMENT expediente (#PCDATA)>
+	<!ELEMENT nota1 (#PCDATA)>
+	<!ELEMENT nota2 (#PCDATA)>
+	<!ELEMENT nota3 (#PCDATA)>
+	<!ELEMENT notafinal (#PCDATA)>
+]>
+<alumnos>
+   <alumno>
+    <nombre>Juan</nombre>
+       <expediente>1120</expediente>
+       <nota1>5</nota1>
+       <nota2>8</nota2>
+       <nota3>10</nota3>
+       <notafinal>7</notafinal>
+    </alumno>
+    <alumno>
+    <nombre>Pedro</nombre>
+       <expediente>1125</expediente>
+       <nota1>9</nota1>
+       <nota2>6</nota2>
+       <nota3>0</nota3>
+       <notafinal>5</notafinal>
+    </alumno>
+   
+</alumnos>

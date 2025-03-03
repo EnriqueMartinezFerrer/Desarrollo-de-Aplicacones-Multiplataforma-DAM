@@ -1,0 +1,44 @@
+Nombre: Andrés Isaías Martínez Olmedo
+
+USE LIGA
+
+Ejercicio 1:
+
+DELIMITER $$
+
+CREATE OR REPLACE PROCEDURE aimo1 (IN a1 INT, IN a2 INT)
+READS SQL DATA
+BEGIN
+DECLARE sel TEXT;
+
+SET sel = CONCAT("SELECT e.nombre AS `EQUIPO`, MONTH(p.fecha) AS `MES`, (SUM(id_equipo=visitante) +SUM(id_equipo=local)) AS `NUMERO DE PARTIDOS` FROM EQUIPO e INNER JOIN PARTIDO p ON id_equipo = local WHERE YEAR(fecha) =",a1," OR YEAR(fecha) = ",a2," GROUP BY 1,2 ORDER BY 1, 2 DESC;");
+
+PREPARE s FROM sel;
+EXECUTE s;
+DEALLOCATE PREPARE s;
+END $$
+DELIMITER ;
+
+CALL AIMO1(2010,2011);
+
+Ejercicio 2:
+
+
+DELIMITER $$
+
+CREATE OR REPLACE PROCEDURE aimo2(IN m1 INT,IN m2 INT,IN m3 INT)
+READS SQL DATA
+BEGIN
+DECLARE sel TEXT;
+
+SET sel= CONCAT("SELECT e.nombre AS `EQUIPO`, IFNULL(SUM(MONTH(fecha_alta) = ",m1,"),0) AS ",ELT(m1, `Enero`, `Febrero`, `Marzo`, `Abril`, `Mayo`, `Junio`, `Julio`, `Agosto`, `Septiembre`, `Octubre`, `Noviembre`, `Diciembre`),",
+	IFNULL(SUM(MONTH(fecha_alta) = ",m2,"),0) AS  ",ELT(m2, `Enero`, `Febrero`, `Marzo`, `Abril`, `Mayo`, `Junio`, `Julio`, `Agosto`, `Septiembre`, `Octubre`, `Noviembre`, `Diciembre`),",
+	IFNULL(SUM(MONTH(fecha_alta) = ",m3,"),0) AS ",ELT(m3, `Enero`, `Febrero`, `Marzo`, `Abril`, `Mayo`, `Junio`, `Julio`, `Agosto`, `Septiembre`, `Octubre`, `Noviembre`, `Diciembre`),"
+	FROM EQUIPO e INNER JOIN JUGADOR j WHERE id_equipo IS NOT NULL GROUP BY 1;");
+PREPARE s FROM sel;
+EXECUTE s;
+DEALLOCATE PREPARE s;
+END $$
+DELIMITER ;
+
+call AIMO2(1,2,3);

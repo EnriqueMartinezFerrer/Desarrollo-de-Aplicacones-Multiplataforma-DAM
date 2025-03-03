@@ -1,0 +1,5 @@
+1./edificio/vivienda/vecinos/nombre
+/edificio/vivienda[piso=1]
+2.sum(/listatickets/ticket/total)
+3./peliculas/pelicula[valoracion >= 4] 
+		

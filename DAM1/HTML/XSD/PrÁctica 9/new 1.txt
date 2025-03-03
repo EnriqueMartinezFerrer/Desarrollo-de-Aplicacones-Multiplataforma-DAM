@@ -1,0 +1,16 @@
+<html>
+<head><metacharset="UTF-8">
+<title>Primera Página</title>
+</head>
+<body>
+
+<center><h1><a name="PrincipioPrimera">Primera Página</a></h1></center>
+
+<a href="PaginaPrincipal.html#PrincipioPrincipal">Página Principal</a>
+<a href="SegundaPagina.html#PrincipioSegunda">Segunda Página</a>
+<a href="TerceraPagina.html#PrincipioTercera">Tercera Página</a>
+
+
+
+</body>
+</html>

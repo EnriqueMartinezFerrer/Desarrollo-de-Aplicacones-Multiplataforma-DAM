@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+ <!-- Ejemplo: PR06-000.xml -->
+<?xml-stylesheet type="text/css" href="PR6-000.css" ?>
+<listadeproductos>
+    <producto>
+        <nombre>Galletas integrales</nombre> 
+        <codigo>8402973812000</codigo>
+        <precio>6.45</precio>
+        <moneda>eur</moneda>
+    </producto>
+    <producto>
+        <nombre>Cereales con chocolate</nombre>
+        <codigo>6482947100032</codigo>
+        <precio>4.75</precio>
+        <moneda>eur</moneda>
+    </producto>
+</listadeproductos>
+
+

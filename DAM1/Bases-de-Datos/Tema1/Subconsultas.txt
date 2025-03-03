@@ -1,0 +1,439 @@
+1
+
+select Nombre,apellido1 as "Primer apellido", apellido2 as "Segundo apellido",
+round(salario,2) as "Salario" from empleados
+where salario > (select salario from empleados where nombre="Jorge"
+and apellido1="Pascual" and apellido2="Ruiz");
+
+3
+
+select Nombre,apellido1 as "Primer apellido",apellido2 as "Segundo apellido",
+(select min(comision) from empleados where departamento=4) as "Minima comision"
+from empleados where comision > (select min(comision) from
+empleados where departamento=4);
+
+5
+
+select Nombre,apellido1 "Primer apellido",apellido2 "Segundo apellido",
+Departamento from empleados where departamento in (3,4,5) and salario <
+(select avg(salario) from empleados where departamento in(1,6));
+
+6
+
+select Departamento,round(avg(comision),1) as `Comision media`,
+(select round(avg(comision),1) from empleados where departamento in (2,4))
+as `Media` from empleados group by 1 having `Comision media` > `Media`;
+
+7  
+//Asegurarse de que la consulta devuelve una sola
+fila utilizando el show create table//
+
+select Departamento,max(comision) as `Maxima comision`,min(comision) 
+as `Minima comision` from empleados where departamento <> 
+(select departamento from departamentos where descripcion = "CPD")
+group by 1;
+
+8
+
+select Nombre,apellido1 as `Primer apellido`,apellido2 as `Segundo apellido`,
+Comision from empleados where apellido1 is not null and
+apellido2 is not null and nombre is not null and 
+comision=(select min(comision) from empleados);
+
+10
+
+select Nombre,apellido1 as `Primer apellido`,apellido2 as `Segundo apellido`,
+Comision from empleados where comision in 
+((select min(comision) from empleados),(select max(comision) from empleados))
+order by 4 desc,2,3,1;
+
+11
+
+select sum(comision) AS "Suma de las comisiones CPD" from empleados where
+departamento = 
+(select departamento from departamentos where descripcion="CPD");
+12
+
+select Departamento, round(avg(salario),1) as "Salario medio" from empleados
+group by 1 having count(*) = (select count(*) from empleados group by departamento 
+order by 1 desc limit 1);
+
+14
+
+select Departamento,avg(salario) as `Salario medio` 
+from empleados where departamento <>
+(select departamento from departamentos where descripcion="CPD") 
+group by 1 having
+`Salario medio` <= (select avg(salario) from empleados where departamento=
+(select departamento from departamentos where descripcion = "CPD"));
+
+16
+
+select Nombre,apellido1 `Primer apellido`,apellido2 `Segundo apellido` 
+from empleados where nombre is not null and apellido1 is not null and apellido2
+is not null and comision in (select comision from empleados group by 1 having count(*)=
+(select count(*) from empleados group by comision 
+order by 1 desc limit 1));
+
+19
+
+select Nombre,apellido1 `Primer apellido`,apellido2 `Segundo apellido`,Departamento
+from empleados where oficio not in(select oficio from empleados where departamento=3);
+
+22
+
+select Nombre,apellido1 `Primer apellido`,apellido2 `Segundo apellido`, 
+Salario,Departamento from empleados where salario > all 
+(select salario from empleados where departamento=1);
+
+///////////////////////obtener empleados donde salario > media de su departamento
+
+select *,(select avg(salario) from empleados where departamento=e.departamento)
+as `Media departamento` from empleados e where salario > 
+(select avg(salario) from empleados where departamento=e.departamento);
+
+/////////////////////////obtener local(nombre),visitante(nombre),resultado(xx-xx)
+
+select (select nombre from equipo where id_equipo=local) `Local`,
+(select nombre from equipo where id_equipo=visitante) `Visitante`,Resultado
+from partido;
+
+32
+
+select * from jugador a where altura between (select distinct
+altura from jugador where
+altura = a.altura-0.01) and
+(select distinct altura from jugador where altura = a.altura+0.01);
+//////////////////////////////////USO DEL EXISTS//////////////////////////////////
+select * from jugador a where EXISTS
+(select * from jugador where altura= a.altura+0.01) and
+EXISTS(select * from jugador where altura= a.altura-0.01);
+
+obtener la media de los samadios medios de cada departamento
+
+select avg(t.media) from (select Departamento,avg(salario) `media` from empleados
+group by 1) t;
+
+//////////////////////////////////INNER JOIN////////////////////////////////////
+
+select * from ciclos ci INNER JOIN cursos cu;
+
+select nombre, a.apellido,b.apellido,c.apellido
+from nombres n inner join apellidos a 
+inner join apellidos b inner join apellidos c;
+
+select * from departamentos d inner join empleados e
+on d.departamento=e.departamento;
+
+select e.nombre `Local`,e2.nombre `Visitante`,Resultado 
+from equipo e inner join partido p on
+e.id_equipo=local inner join equipo e2 on
+e2.id_equipo=visitante;
+
+38
+|cantidad de vendedores||año||nombre cliente|
+
+select count(distinct f.vendedor) `Vendedor`,year(f.fecha) `Año`,
+concat_ws(" ",c.nombre,c.primer_apellido,c.segundo_apellido) `Cliente`
+from facturas f inner join clientes c on c.codigo=f.cliente
+group by 2,3;
+
+39
+
+select c.Nombre,c.Apellidos,sum(if(debe_haber="haber",-cantidad,cantidad)) `Saldo`
+from cuentas c inner join apuntes a on numero=cuenta
+group by 1,2;
+
+40 
+
+select f.Codigo `Factura`,f.Fecha,
+concat_ws(" ",v.nombre,v.primer_apellido,v.segundo_apellido)`Vendedor`,
+concat_ws(" ",c.nombre,c.primer_apellido,c.segundo_apellido)`Cliente`,
+sum(a.precio_venta * av.numero_de_unidades)`Total`
+from facturas f inner join clientes c on f.cliente=c.codigo 
+inner join vendedores v on f.vendedor=v.codigo
+inner join articulos_vendidos av on f.codigo=av.factura
+inner join articulos a on a.codigo=av.articulo
+where month(fecha) in(3,7,12) and fecha >= curdate() - interval 7 year
+group by 1
+having `Total` between 50 and 1200
+order by 5 desc; 
+
+select d.* from departamentos d left 
+join empleados e on d.departamento=e.departamento
+where e.empleado is not null;
+
+42
+
+empleados cuyo salario es mayor que el salario medio de mi departamento
+
+|Empleado||Salario||Departamento|
+
+select e.*,media from empleados e inner join 
+(select departamento,avg(salario) as `media` from empleados group by 1) t
+on e.departamento=t.departamento
+where salario > media;
+
+42-32
+
+|*jugadores||altura|
+
+select distinct j.nombre,j.apellido,j.altura
+ from jugador j inner join
+jugador j1 on j.altura=j1.altura+0.01 inner join
+jugador j2 on j.altura=j2.altura-0.01;
+
+43
+
+create table A
+select Departamento,Localidad from bd5.departamentos;
+
+create table B
+select Seccion,Ciudad from bd1.secciones
+inner join bd6.ciudades
+where ciudad like "A%" or ciudad like "Ba%"
+or ciudad like "Ma%";
+
+select * from a
+intersect
+select * from b;
+
+select a.* from a inner join b 
+on departamento=seccion and
+localidad=ciudad;
+
+select * from a
+except
+select * from b;
+
+select a.* from a left join b 
+on departamento=seccion and
+localidad=ciudad
+where seccion is null and ciudad is null;
+
+/////////////////////////TABLAS VIRTUALES/////////////////////////////////////////
+
+create or replace NOMBRE_DE_LA_TABLA
+view nombre as 
+select.......
+
+45
+
+create or replace 
+view SALARIOS_POR_DEPARTAMENTO as
+select departamento, max(salario) Maximo,
+min(salario) Minimo 
+from empleados
+group by 1;
+
+show create view salarios_por_departamento;
+
+drop view salarios_por_departamento;
+
+select Nombre,apellido1 `Primer apellido`,apellido2 `Segundo apellido`,
+e.Departamento,Salario,maximo,minimo
+from empleados e inner join salarios_por_departamento s
+on e.departamento=s.departamento 
+where salario not in(minimo,maximo);
+
+//////////////////////////////////VARIABLES DE USUARIO////////////////////////////
+
+set @a=rand();
+set @b=truncate(rand()*11,0);
+set @nombre="pedro", @a=2;
+
+select departamento, max(salario) Maximo,
+min(salario) Minimo 
+into @d,@max,@min
+from empleados
+group by 1
+limit 1;
+
+56
+
+||Departamento||Descripcion||Numero de empleados||
+
+select d.Departamento,Descripcion,count(*)`Numero de empelados`
+into @dep, @des, @num
+from departamentos d
+inner join empleados e on
+d.departamento=e.departamento
+where d.departamento=1;
+
+57
+
+||ultimo departamento(dep)||maximo salario(em)||minimo salario(em)||
+
+select d.departamento,ifnull(max(salario),0)`Maximo salario`,
+ifnull(min(salario),0)`Minimo salario`,
+ifnull(round(avg(salario),2),0)`Salario medio`
+into @dep,@max,@min,@media
+from departamentos d left join empleados e
+using (departamento)
+group by 1
+order by 1 desc limit 1;
+
+///////////////////////////SENTENCIAS PREPARADAS//////////////////////////////////
+
+set @sql="select * from departamentos where departamento=1";
+prepare s from @sql;
+execute s; 
+drop prepare s;
+		///////////////VARIABLES ?//////////////////
+set @sql="select * from departamentos where departamento in (?,?,?);";
+prepare s from @sql;
+execute s using 2,3,5; 
+drop prepare s;
+
+set @sql="select * from empleados where fecha_alta> curdate() - interval ? year"
+
+59
+
+||equipo||altura1||altura2||
+
+select e.Nombre`Equipo`, sum(altura=1.98)`1,98`,sum(altura=2.00)`2,00`
+from equipo e inner join jugador j on id_equipo=equipo
+group by 1;
+
+select e.Nombre`Equipo`, sum(altura=?)`,?,`,sum(altura=?)`,?,`
+from equipo e inner join jugador j on id_equipo=equipo
+group by 1;
+
+delimiter $$
+create or replace procedure  trc1(a1 decimal(5,2), a2 decimal(5,2)) reads sql data
+begin
+set @sql = concat('select e.Nombre, sum(altura=',a1,')"',a1,'",
+sum(altura=',a2,')"',a2,'"
+from equipo e inner join jugador j on id_equipo=equipo
+group by 1;');
+prepare s from @sql;
+execute s;
+drop prepare s;
+end $$
+
+60
+
+delimiter $$
+create or replace procedure trc2(y1 integer(4),y2 integer(4),y3 integer(4),
+p1 varchar(15),p2 varchar(15)) reads sql data
+begin
+set @sql=concat('select distinct posicion "",(select truncate(avg(altura),2)
+from jugador where year(fecha_alta)=',y1,' and posicion=j.posicion)"',y1,'",
+(select truncate(avg(altura),2) from jugador where year(fecha_alta)=',y2,' and posicion=j.posicion)"',y2,'",
+(select truncate(avg(altura),2) from jugador where year(fecha_alta)=',y3,' and posicion=j.posicion)"',y3,'"
+from jugador j where posicion in ("',p1,'","',p2,'");');
+prepare s from @sql;
+execute s;
+drop prepare s;
+end $$
+
+call trc2(2008,2009,20011,"pivot","alero")$$
+
+select distinct Posicion,ifnull((select truncate(avg(altura),2) from jugador where year(fecha_alta)=2008 
+and posicion=j.posicion),"")`2008`,
+ifnull((select truncate(avg(altura),2) from jugador where year(fecha_alta)=2009 
+and posicion=j.posicion),"")`2009`,
+ifnull((select truncate(avg(altura),2) from jugador where year(fecha_alta)=2010 
+and posicion=j.posicion),"")`2010`
+from jugador j where posicion in ("Pivot","alero");
+
+select Posicion,
+ifnull(truncate(avg(if(year(fecha_alta)=2008,altura,null)),2),"")`2008`,
+ifnull(truncate(avg(if(year(fecha_alta)=2009,altura,null)),2),"")`2009`,
+ifnull(truncate(avg(if(year(fecha_alta)=2010,altura,null)),2),"")`2010`
+from jugador where posicion in ("Pivot","Alero")
+group by 1;
+
+delimiter $$
+create or replace procedure trc60
+(p1 varchar(45),p2 varchar(45),a1 year,a2 year,a3 year) reads sql data
+begin
+set @sql=concat('select Posicion,
+ifnull(truncate(avg(if(year(fecha_alta)=',a1,',altura,null)),2),"")"',a1,'",
+ifnull(truncate(avg(if(year(fecha_alta)=',a2,',altura,null)),2),"")"',a2,'",
+ifnull(truncate(avg(if(year(fecha_alta)=',a3,',altura,null)),2),"")"',a3,'"
+from jugador where posicion in ("',p1,'","',p2,'")
+group by 1');
+prepare s from @sql;
+execute s;
+drop prepare s;
+end $$
+delimiter;
+
+call trc60("alero","pivot",2008,2009,2010);
+
+////////////////////////////EJERCICIOS DE REPASO//////////////////////////////////
+
+1
+
+select * from jugador where altura=(select max(altura) from jugador);
+
+11
+
+select concat(j.nombre," ",j.apellido),e.nombre`Equipo`,j.posicion`Posicion`
+from equipo e inner join jugador j on id_equipo=equipo;
+
+3
+
+select * from jugador
+where equipo=(select local from partido where visitante=
+(select id_equipo from equipo where nombre="p.e. Valencia")); 
+
+13
+
+select e.* from equipo e 
+inner join jugador j on id_equipo=equipo
+group by id_equipo
+having count(*)>3;
+
+9
+
+select concat(nombre," ",apellido)`Nombre` from jugador
+where salario in((select max(salario)from jugador),
+(select min(salario)from jugador));
+
+18
+
+select nombre, sum(if(id_equipo=local)
+from equipo inner join partido p on id_equipo in (local,visitante)
+
+4 Resultado más repetido del Tenerife
+
+create or replace view repeticionespuntos as
+select id_equipo, if(id_equipo=local,substring_index(resultado,"-",1),
+substring_index(resultado,"-",-1))`Puntos`,count(*) `Repeticiones`
+from equipo e inner join partido p on id_equipo in(local,visitante)
+group by 1,2;
+
+select puntos`Puntos`
+from repeticionespuntos
+where id_equipo=(select id_equipo from equipo
+	where nombre=P.E. Valencia) and repeticiones=
+	(select max(repeticiones) from repeticionespuntos
+	where id_equipo=(select id_equipo from equipo 
+		where nombre= P.E.Valencia));
+
+6 Datos de jugadores cuyo salario sea menor que el de sus capitanes.
+
+select * from jugador j 
+where salario < (select min(salario) from jugador where equipo=j.equipo
+and id_jugador=id_capitan);
+
+10  Datos de los equipos que se hayan enfrentados a todos los demás.
+
+create or replace view contrarios as
+select id_equipo`Equipo`,if(local=id_equipo,visitante,local)`Contra`
+from equipo e inner join partido p on id_equipo in (local,visitante)
+;
+
+select equipo from contrarios
+group by 1
+having count(*)+1=(select count(*) from equipo);
+
+17  Datos de los partidos con mayor puntuación.
+
+select if(substring_index(resultado,"-",1)*1>=
+substring_index(resultado,"-",-1)*1,substring_index(resultado,"-",1)*1,
+substring_index(resultado,"-",-1)*1)`Máximo puntaje`
+from partido
+order by 1 desc limit 1;

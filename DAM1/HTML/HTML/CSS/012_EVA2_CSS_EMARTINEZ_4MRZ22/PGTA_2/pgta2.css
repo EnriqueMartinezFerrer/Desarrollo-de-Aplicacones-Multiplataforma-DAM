@@ -1,0 +1,6 @@
+body {background-color: blue;}
+#contenido {width: 600px;height: 400px;position: absolute;background-image: url(./noel2.jpg);top: 0; bottom: 0; left: 0; right: 0;margin: auto;color: red;font-size: 3em;text-align: center;}
+.izq_top {width: 150px;height: 150px;float: left;color: white;background-color: red;margin-top: -80px;margin-left: -55px;font-size: 2.5em;}
+.dch_top {width: 150px;height: 150px;color: white;background-color: red;float: right;margin-top: -80px;margin-right: -55px;font-size: 2.5em;}
+.izq_down {width: 150px;height: 150px;color: white;background-color: red;float: left;margin-top: 340px;margin-left: -140px;font-size: 2.5em;}
+.dch_down {width: 150px;height: 150px;color: white;background-color: red;float: right;margin-top: 340px;margin-right: -140px;font-size: 2.5em;}

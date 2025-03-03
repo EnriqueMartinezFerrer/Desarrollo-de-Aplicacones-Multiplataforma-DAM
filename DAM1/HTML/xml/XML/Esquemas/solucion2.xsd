@@ -1,0 +1,47 @@
+﻿<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:element name="alumnos">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="alumno" maxOccurs="unbounded">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="nombre" type="xsd:string"/>
+              <xsd:element name="direccion" minOccurs="1" maxOccurs="2">
+                <xsd:complexType>
+                  <xsd:sequence>
+                    <xsd:element name="calle" type="xsd:string"/>
+                    <xsd:element name="numero">
+                      <xsd:simpleType>
+                        <xsd:restriction base="xsd:integer">
+                            <xsd:minInclusive value="0"/>
+                            <xsd:maxInclusive value="500"/>
+                        </xsd:restriction>
+                      </xsd:simpleType>
+                    </xsd:element>
+                    <xsd:element name="ciudad" type="xsd:string"/>
+                    <xsd:element name="provincia">
+                      <xsd:simpleType>
+                        <xsd:restriction base="xsd:string">
+                          <xsd:enumeration value="Cáceres"/>
+                          <xsd:enumeration value="Badajoz"/>
+                        </xsd:restriction>
+                      </xsd:simpleType>
+                    </xsd:element>
+                  </xsd:sequence>
+                </xsd:complexType>
+              </xsd:element>
+              <xsd:element name="telefono" type="xsd:integer" minOccurs="0" maxOccurs="5"/>
+            </xsd:sequence>
+            <xsd:attribute name="dni">
+              <xsd:simpleType>
+                <xsd:restriction base="xsd:string">
+                  <xsd:pattern value="[0-9]{8}[A-Z]"/>
+                </xsd:restriction>
+              </xsd:simpleType>
+            </xsd:attribute>
+          </xsd:complexType>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>

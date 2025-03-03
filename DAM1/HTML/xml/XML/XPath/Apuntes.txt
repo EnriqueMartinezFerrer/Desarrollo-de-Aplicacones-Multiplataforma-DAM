@@ -1,0 +1,15 @@
+/edificio/vivienda/vecinos/nombre
+/edificio/vivienda[piso=4]
+sum(/listatickets/ticket/total)
+count(//apellidos)
+/peliculas/pelicula[valoracion>=4]
+/fp/web/text()
+/fp/ciclos//ciclo//nombre//text()
+//ciclo/@id
+/fp/ciclos//ciclo//decretoTitulo/@*
+/fp/ciclos/ciclo[@id="SMR"]
+/fp/ciclos/ciclo[@id="SMR"]/decretoTitulo
+//ciclo[grado="Superior"]/nombre
+//ciclo[decretoTitulo/@año <= 2010]/nombre/text()
+//ciclo[decretoTitulo/@año = 2010 or decretoTitulo/@año = 2009]/nombre/text()
+alumnos/alumno[position() &lt; 2]

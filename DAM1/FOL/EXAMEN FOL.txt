@@ -1,0 +1,41 @@
+Gastos por desplazamiento.............. 
+Días de desplazamiento................. 
+Número de pagas extraordinarias........ 
+
+
+1. PERCEPCIONES
+	- Salariales:
+		Salario base...................
+		Antigüedad..................... 
+		Plus convenios.................
+		Complemento personal........... 
+		Horas extra.................... 
+	- No salariales:
+		Plus transporte................
+		Gastos de locomoción........... GD * NPE = 
+SUMA PERCEPCIONES (TOTAL DEVENGADO) = SB + CP + HE + PT + GL = SP
+
+
+2. BASES
+	- BCC (Base de contingencias comunes):
+		RM = SB + A + PC + CP + PT = 
+		P = ((SB + A + CP) * nº pagas)/12 = 
+		TOTAL = RM + P = 
+	- BCP (Base de contingencias profesionales):
+		BCC + HE 
+	- BHE (Base de horas extra):
+		HE =
+	- BIRPF (Base IRPF):
+		RM + HE = 
+3. DEDUCCIONES
+	- Seguridad social:
+		Contingencias comunes........4,70%.....4,70% * BCC 
+		Formación profesional........0,10%.....0,10% * BCP 
+		Horas extra..................4,70%.....4,70% * BHE 
+		Desempleo....................1,60%.....1,60% * BCP 
+	- IRPF:
+		IRPF.........................IRPF%.......IRPF% * BIRPF 
+TOTAL A DEDUCIR = TODO DEDUCCIONES
+
+
+LÍQUIDO A - B = TOTAL DEVENGADO - TOTAL A DEDUCIR = 

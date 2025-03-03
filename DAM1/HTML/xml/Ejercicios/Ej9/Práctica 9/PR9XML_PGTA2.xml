@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Ejemplo:      PR9XML.xml -->
+<?xml-stylesheet type="text/xsl" href="PR9XML_RPTA2.XSL"?>
+<catalogo>
+	<libro>
+		<titulo>Manual Imprescindible de C/C++</titulo>  
+		<autores>
+			<autor>Miguel Angel Acera Garcia</autor>
+		</autores>
+		<paginas>416</paginas>
+		<editorial>Anaya Multimedia</editorial>
+	</libro>
+	<libro>
+		<titulo>Redes locales</titulo>
+		<isbn>9788441519800</isbn>
+		<autores>
+			<autor>Jim Doherty</autor>
+			<autor>Neil Anderson</autor>
+		</autores>
+		<paginas>544</paginas>
+		<editorial>Anaya Multimedia</editorial>
+	</libro>
+</catalogo>

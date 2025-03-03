@@ -1,0 +1,35 @@
+Enrique Martínez Ferrer
+Ej1
+use liga2
+select equipo as "EQUIPO", 
+sum(altura) as "ALTURA TOTAL DE LOS CAPITANES" 
+from jugador 
+where altura-id_capitan group by 1;
+
+Ej2
+select posicion as "POSICION",
+	YEAR(fecha_alta) as "AÑO"
+from jugador
+where posicion is not null and altura is not null and fecha_alta is not null
+group by 1;
+
+Ej3
+select posicion as "POSICION",
+	MAX(salario) AS "SALARIO MAXIMO",
+	MIN(salario) AS "SALARIO MINIMO",
+	ROUND(AVG(salario),2) as "SALARIO MEDIO"
+from jugador
+where posicion is not null and altura is not null and equipo is not null
+group by 1;
+
+Ej4
+SELECT POSICION,
+
+	SUM(year(fecha_alta)=2009) AS “2009”,
+	SUM(year(fecha_alta)=2010) AS “2010”,
+	SUM(year(fecha_alta)=2011) AS “2011”,
+	SUM(year(fecha_alta)=2012) AS “2012”
+FROM jugador
+WHERE altura not between 1.9 and 2 and posicion is not null
+GROUP BY 1;
+

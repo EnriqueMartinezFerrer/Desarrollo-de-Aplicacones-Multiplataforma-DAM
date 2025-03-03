@@ -1,0 +1,37 @@
+//Enrique Martinez Ferrer
+DELIMITER $$ 
+CREATE OR REPLACE PROCEDURE emf1(year1 INT, year2 INT)
+READS SQL DATA
+
+BEGIN
+DECLARE sel TEXT;
+SET sel = CONCAT("select e.EQUIPO, 
+MONTH(fecha) AS 'MES',
+SUM(local)+SUM(visitante) AS 'NUMERO DE PARTIDOS' FROM equipo e INNER JOIN partido p ON YEAR(fecha)=",year1," AND YEAR(fecha)=",year2," GROUP BY MONTH(fecha),e.EQUIPO ORDER BY equipo DESC,MONTH(fecha);");
+PREPARE s FROM sel;
+EXECUTE s;
+DEALLOCATE PREPARE s;
+END $$
+DELIMITER ;
+CALL emf1(2010,2011);
+
+
+
+ 
+Ejercicio 2->
+
+DELIMITER $$
+CREATE OR REPLACE PROCEDURE emf2(abr INT,enr INT,may INT) READS SQL DATA
+BEGIN
+DECLARE sel TEXT;
+SET sel=CONCAT("SELECT NOMBRE, (SELECT COUNT() FROM jugador WHERE equipo=r.id_equipo) 
+AND MONTH(fecha_alta)=",abr,") AS CHOOSE(",abr,",'Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'), 
+(SELECT COUNT(*) FROM jugador WHERE equipo=r.id_equipo) AND MONTH(fecha_alta)=",enr,") 
+AS CHOOSE(",enr,",'Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'), 
+(SELECT COUNT(*) FROM jugador WHERE equipo=r.id_equipo) AND MONTH(fecha_alta)=",may,") 
+AS CHOOSE(",abr,",'Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre') FROM equipo r;");
+PREPARE s FROM sel;
+EXECUTE s;
+DEALLOCATE PREPARE s;
+END $$
+DELIMITER ;

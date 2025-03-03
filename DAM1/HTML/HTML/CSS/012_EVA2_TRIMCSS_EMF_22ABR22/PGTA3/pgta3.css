@@ -1,0 +1,41 @@
+/* ESTA PREGUNTA ES MUY FACIL!!! */
+body{
+	background-color: yellow;
+}
+
+#contenido{
+	width: 600px;
+	height: 400px;
+	color: red;
+	background-image: url(primavera.jpg);
+	text-align: center;
+	font-size: 2.5em;
+	position: absolute;
+	top: 0;
+	right: 0;
+	left: 0;
+	bottom: 0;
+	margin: auto;
+}
+
+.dch_center{
+	font-size: 2.5em;
+	width: 150px;
+	height: 150px;
+	background-color: red;
+	color: white;
+	position: absolute;
+	right:-13%;
+	top: 31%;
+}
+
+.izq_center{
+	font-size: 2.5em;
+	width: 150px;
+	height: 150px;
+	background-color: red;
+	color: white;
+	position: absolute;
+	left:-13%;
+	top: 31%;
+}

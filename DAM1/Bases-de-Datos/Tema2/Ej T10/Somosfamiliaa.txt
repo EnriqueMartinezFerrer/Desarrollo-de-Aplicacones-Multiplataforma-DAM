@@ -1,0 +1,8 @@
+Abuela Ana(alon)-------Abuelo Fernando(fran)
+	|				|
+Tio Cristian(charlie)	Tia Luisa(lucas)(divorciada)
+	+				=
+Tia Gema(guille)			Prima Elena(kikeviejo)
+	=				Primo rodrigo(rafa)
+Primo Diego(david)		Prima Isabel(isra)
+Primo Kiko(Kike)			Prima Violeta(victor)

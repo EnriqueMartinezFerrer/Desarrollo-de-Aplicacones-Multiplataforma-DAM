@@ -1,0 +1,84 @@
+EJERCICIO 1 (bd5)
+-----------
+USE bd5;
+CREATE OR REPLACE PROCEDURE ejercicio1(
+	cantidad1 DOUBLE(9,2) UNSIGNED,
+	cantidad2 DOUBLE(9,2) UNSIGNED
+)
+READS SQL DATA
+SELECT * FROM empleados
+WHERE salario BETWEEN cantidad1 AND cantidad2 OR
+salario BETWEEN cantidad2 AND cantidad1;
+
+
+
+EJERCICIO 2 (bd5)
+-----------
+USE bd5;
+CREATE OR REPLACE PROCEDURE ejercicio2()
+READS SQL DATA
+SELECT e.departamento AS "Departamento",
+	d.descripcion AS "Descripción",
+	COUNT(salario) AS "Número",
+	MIN(salario) AS "Mínimo salario",
+	MAX(salario) AS "Máximo salario",
+	ROUND(AVG(salario),2) AS "Salario medio"
+FROM empleados e INNER JOIN departamentos d USING(departamento)
+GROUP BY 1
+ORDER BY 1;
+
+
+
+EJERCICIO 4 (bd5)
+-----------
+USE bd5;
+CREATE OR REPLACE PROCEDURE ejercicio4(letra CHAR(1) COLLATE latin1_spanish_ci)
+READS SQL DATA
+SELECT * FROM empleados
+WHERE apellido1 LIKE CONCAT(letra, "%");
+
+
+
+EJERCICIO 5 (bd1)
+-----------
+USE bd1;
+CREATE OR REPLACE PROCEDURE ejercicio5()
+READS SQL DATA
+SELECT CONCAT_WS(" ", nombre, apellidos) AS "Nombre",
+	YEAR(CURDATE()) - YEAR(fecha_de_nacimiento) AS "Edad"
+FROM trabajadores
+WHERE MONTH(fecha_de_nacimiento) = MONTH(CURDATE()) AND
+DAY(fecha_de_nacimiento) = DAY(CURDATE())
+ORDER BY 2 DESC;
+
+
+
+EJERCICIO 7 (bd4)
+-----------
+USE bd4;
+CREATE OR REPLACE PROCEDURE ejercicio7()
+READS SQL DATA
+SELECT c.numero, c.apellidos, c.nombre, SUM(cantidad) AS "Cantidad"
+FROM apuntes a INNER JOIN cuentas c ON a.cuenta = c.numero
+GROUP BY cuenta;
+
+
+
+EJERCICIO 8 (bd4)
+-----------
+USE bd4;
+CREATE OR REPLACE PROCEDURE ejercicio8(saldo INT)
+READS SQL DATA
+SELECT c.numero, c.apellidos, c.nombre, SUM(cantidad) AS `Cantidad`
+FROM apuntes a INNER JOIN cuentas c ON a.cuenta = c.numero
+GROUP BY cuenta
+HAVING `Cantidad` < saldo;
+
+
+
+EJERCICIO 21 (bd1)
+------------
+USE bd1;
+CREATE OR REPLACE PROCEDURE ejercicio21()
+SELECT COUNT(*) FROM trabajadores
+WHERE seccion IS NULL;

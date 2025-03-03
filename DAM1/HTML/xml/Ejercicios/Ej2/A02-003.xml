@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- Ejercicio: PR2-003.xml -->
+<!DOCTYPE libro [
+	<!ELEMENT libro (capitulo, capitulo, capitulo)>
+	<!ELEMENT capitulo (titulo, paginas, autor)> 
+	<!ELEMENT titulo (#PCDATA)>
+  <!ELEMENT paginas (#PCDATA)>
+	<!ELEMENT autor (#PCDATA)>
+]>
+<libro>
+   <capitulo>
+      <titulo>El amanecer</titulo>
+       <paginas>18</paginas>
+       <autor>carmen </autor>
+    </capitulo>
+    <capitulo>
+      <titulo>Una Tarde apacible</titulo>
+       <paginas>34</paginas>
+       <autor>Antonio</autor>
+     </capitulo>
+    <capitulo>
+      <titulo>conociendo el entorno</titulo>
+       <paginas>27</paginas>
+       <autor>Antonio</autor>
+    </capitulo>
+</libro>

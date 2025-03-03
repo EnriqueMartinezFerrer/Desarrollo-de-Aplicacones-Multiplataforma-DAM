@@ -1,0 +1,215 @@
+1
+
+select * from departamentos;
+select * from coches;
+select * from facturas;
+select * from empleados;
+select * from table clases;
+
+16
+
+select concat("Departamento: ",departamento) as Departamento,
+concat("Descripcion: ",upper(descripcion)) as Descripcion 
+from departamentos;
+
+17
+
+use bd1;
+
+select apellidos as apellidos,
+substring_index(apellidos," ",1) as "Primer apellido",
+substring_index(apellidos," ",-1) as "Segundo apellido" from trabajadores;
+
+19
+
+select  salario as Sal,
+departamento as Dep,
+salario + departamento as "+",
+salario - departamento as "-",
+salario * departamento as "*",
+salario / departamento as "/",
+salario div departamento as "DIV",
+salario % departamento as"%",
+pow(salario,departamento) as "POW" 
+from empleados;
+
+20
+
+use bd3;
+
+select precio_venta as "Precio de venta",
+round(precio_venta,-1) as "Redondear a las decenas",
+truncate(precio_venta,1) as "Truncar a las decimas",
+floor(precio_venta) as "Mayor entero menor o igual",
+ceiling(precio_venta) as "Menor entero mayor o igual"
+from articulos;
+
+21
+
+select now() as "Fecha y hora actual",
+date(now()) as"Extraer la fecha actual",
+time(now()) as "Extraer hora actual",
+curdate() as "Fecha actual",
+curtime() as "Hora actual";
+
+22
+
+use bd6;
+
+select lcase(concat(left(nombre,1),left(apellido1,1),left(apellido2,1))) as "Siglas",
+ucase(concat(apellido1," ",apellido2," ",nombre)) as"nombre completo",
+date_format(fecha_nacimiento,"%d/%m/%y")as"Fecha de nacimiento",
+time_format(hora_nacimiento,"Nacio a las %H horas, %i minutos y %s segundos")
+from personas;
+
+23
+
+use bd5;
+
+select concat_ws(" ",Concat(lcase(oficio),":"),nombre,apellido1,apellido2) as"Oficio:Nombre",
+datediff(curdate(),fecha_alta) as"Número de días de alta",
+format((salario+salario*comision/100)*14,1) as "Salario anual"
+from empleados;
+
+24
+
+use bd2;
+
+select 
+concat(elt(dayofweek(fecha_de_nacimiento),"Domingo","Lunes","Martes","Miercoles",
+"Viernes","Sabado"),',',day(fecha_de_nacimiento),'de',
+elt(month(fecha_de_nacimiento),"Enero","Febrero","Marzo","Abril","Mayo","Junio",
+"Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"),'de',
+year(fecha_de_nacimiento))as "Fecha de nacimiento"
+from conductores;
+
+25
+
+use bd6;
+
+select concat_ws(":",hour(hora_nacimiento),minute(hora_nacimiento),second(hora_nacimiento))as"Hora de nacimiento",
+time_to_sec(hora_nacimiento)as"Hora de nacimiento en segundos",
+curtime() as"Hora actual",
+time_to_sec(curtime())as"Hora actual en segundos",
+timediff(hora_nacimiento,curtime())as"Diferencia",
+abs(time_to_sec(timediff(hora_nacimiento,curtime())))as"Diferencia ens egundos absoluta"
+from personas; 
+
+Ej 30
+use bd2
+select count(*) as "Total conductores",
+    count(fecha_de_nacimiento) as "Total conductores con fecha",
+    count(*)-count(fecha_de_nacimiento) as "Total conductores sin fecha"
+    from conductores;
+Ej 31
+use bd5
+select round(avg(salario),2) as "Salario medio",
+    count(*) as "Numero de empleados",
+    departamento as "Departamento"
+    from empleados where oficio is not null
+    group by departamento;
+
+Ej 32
+use bd5
+select round(avg(datediff(curdate(),fecha_alta)),0) as "Media dias de alta",
+    jefe as "Jefe",
+    oficio as "Oficio"
+    from empleados
+    where salario between 900 and 1500
+    group by oficio,jefe;
+Ej 33
+use bd1
+select * from trabajadores;
+select truncate(sueldo,0) as "Sueldo", Sexo,
+    month(fecha_de_nacimiento) as "Mes",
+    count(*) as "Numero de trabajadores",
+    Sum(day(fecha_de_nacimiento)) as "Suma dias de nacimiento"
+    from trabajadores group by Sueldo,Sexo,3;
+    
+Ej 34
+use bd5
+Ej 35 
+use bd1
+select round(avg(presupuesto),2) as "Media secciones"
+from secciones;
+Ej 36
+use bd1
+select * from trabajadores;
+select  year(fecha_de_nacimiento) as "Año de nacimiento",
+    Sexo,
+    Max(Sueldo) as "Máximo sueldo",
+    Min(Sueldo) as "Mínimo sueldo",
+    sum(estado_civil="casado") as "casados"
+    from trabajadores
+    group by 1,2;
+
+select concat(apellido," ",nombre) as "apellido_nombre",
+from jugador where nombre is not null 
+and fecha_alta is not null
+and fecha_alta + interval 11 year > curdate();
+curdate() as "Fecha actual"
+from jugador;
+39
+USE bd2;
+SELECT color, numero_de_puertas AS "Numero de puertas",
+	count(*) AS "Número de coches"
+FROM coches WHERE color IS NOT NULL AND numero_de_puertas IS NOT NULL
+GROUP BY 1,2;
+
+41
+USE bd3;
+SELECT articulo,
+	SUM(numero_de_unidades) AS "Total unidades"
+FROM articulos_vendidos
+GROUP BY 1;
+
+42
+USE bd3;
+SELECT month(fecha) AS "Mes",
+	count(*) as "Número de facturas"
+FROM facturas
+WHERE CURDATE() - INTERVAL 10 YEAR < fecha
+GROUP BY 1;
+
+43
+USE bd5;
+SELECT departamento, jefe, oficio,
+	AVG(salario) AS "Salario medio",
+	AVG(comision) AS "Comision media"
+FROM empleados
+WHERE jefe IS NOT NULL AND salario BETWEEN 1000 and 2000
+GROUP BY 1,2,3;
+
+44
+USE bd5;
+SELECT departamento,
+	ROUND(MAX(salario) - MIN(salario),1) AS "Salario medio",
+	ROUND(MAX(comision) - MIN(comision),1) AS "Comisión media",
+FROM empleados
+GROUP BY 1;
+
+45
+USE bd3;
+SELECT SUM(precio_venta <= 200) AS "0-200",
+	SUM(precio_venta BETWEEN 200.01 AND 500) AS "200.01-500",
+	SUM(precio_venta > 500) AS "> 500"
+FROM articulos;
+
+46
+USE bd5;
+SELECT departamento,
+	SUM(oficio="analista") AS "Analista",
+	SUM(oficio="programador") AS "Programador",
+	SUM(oficio="vendedor") AS "Vendedor"
+FROM empleados
+GROUP BY 1;
+
+47
+USE bd5;
+SELECT departamento,
+	ROUND(AVG(salario),2) AS "Sueldo medio",
+	ROUND(AVG(comision),2) AS "Total comisión"
+FROM empleados
+WHERE comision IS NOT NULL AND salario IS NOT NULL AND jefe IS NOT NULL
+GROUP BY 1
+HAVING ROUND(AVG(salario),2) BETWEEN 1200 AND 3000;

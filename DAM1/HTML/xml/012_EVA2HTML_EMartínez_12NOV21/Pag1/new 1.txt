@@ -1,0 +1,2 @@
+<a href="./pag3.html"><img src="./imagenes/IraPag3.gif" width="52" height="38" border="10"></a>
+<a href="./pag4.html"><img src="./imagenes/IraPag4.gif" width="52" height="38" border="10"></a>

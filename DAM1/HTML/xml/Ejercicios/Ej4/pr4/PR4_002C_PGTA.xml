@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE ligaDeFutbol [ 
+<!ELEMENT ligaDeFutbol (partido+)>
+<!ELEMENT partido (#PCDATA)>
+<!ATTLIST partido localNombre CDATA #REQUIRED>
+<!ATTLIST partido localGoles CDATA #REQUIRED>
+<!ATTLIST partido visitanteNombre CDATA #REQUIRED>
+<!ATTLIST partido visitanteGoles CDATA #REQUIRED>
+]>
+
+<ligaDeFutbol>
+  <partido localNombre="Real Madrid" localGoles="0" visitanteNombre="Barcelona" visitanteGoles="1" />
+  <partido localNombre="Valencia" localGoles="3"  visitanteNombre="Betis" visitanteGoles="3" />
+  <partido localNombre="Rayo Vallecano" localGoles="4" visitanteNombre="Leganes" visitanteGoles="2" />
+</ligaDeFutbol>

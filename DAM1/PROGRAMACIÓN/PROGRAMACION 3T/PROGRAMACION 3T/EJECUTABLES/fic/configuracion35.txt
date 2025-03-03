@@ -1,0 +1,4 @@
+host=jdbc:mysql://localhost:3307/
+bd=java
+user=root
+password=root

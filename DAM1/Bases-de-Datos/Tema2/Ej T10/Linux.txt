@@ -1,0 +1,13 @@
+ cat /etc/passwd   Mirar los usuarios
+ Toda aplicacion tiene un usuario
+ sudo useradd usr1
+ -->Crear usuario
+ sudo/
+ sudo passwd usr1
+ 
+cat /etc/group
+-->Muestra los grupos
+
+sudo delgroup usr1
+-->Elimina usuario
+sudo useradd usr2 -g group2

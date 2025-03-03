@@ -1,0 +1,99 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>PREGUNTA Nº 2</title>
+<style type="text/css">
+/* No borrar la siguiente regla CSS porque es necesaria para ver los bordes de la tabla */
+table, tr, th, td {border:3px solid #000; border-collapse:collapse; padding:5px;}
+background-color:"pink";
+/* Las cabeceras H1 seran de color Teal */
+h1 {color:teal;}
+ strong {color:red;}
+
+/* Los span de clase destacado seran de color orange */
+
+
+/* Las cabeceras h2 seran de color blue */
+h2 {color:blue;}
+
+/* Los span de clase especial seran de color purple */
+
+ 
+/* Los  enlaces seran de color "red" / enlace con em de color "blue" / los enlaces con link seran sin linea subrayada / y al pasarse el cursor por encima seran de fondo "yellow" y texto en color "green" */
+a:link{color:red;text-decoration:none; }
+a:link em{color:blue; }
+a:hover{background-color:yellow}
+
+div#adicional  {border:1px dashed red;}
+
+/* Dentro del contenedor div "adicional" debera cumplirse lo siguiente, los parrafos seran de color "#FFF" y separado del lado izquierdo en "15px" / los span clase especial sran de color "brown" / los parrafos con span seran de color "yellow" y los enlaces de color "green" */.
+#adicional{color="#FFF";background-color:#123456;border-left-width:15px;}
+
+caption {color: blue; font-weight:bold;}
+
+/* En las celdas el texto sera de color "green" y centrado" / con elemento strong sera de color "orange" */
+
+/* En las celdas th el texto sera de color "red" / y en las th con clase especial será de color "orange" */
+
+
+</style>
+</head>
+ 
+<body bgcolor="pink">
+<h1 id="titulo">Titulo de nivel cabecera 1</h1>
+ 
+<p>Esto es un parrafo; esto es un parrafo; esto es un parrafo; . <strong>ESTE TEXTO ESTA "STRONG"</strong>,esto es un parrafo; esto es un parrafo; esto es un parrafo; . <span class="destacado">ESTE TEXTO ES DE CLASE "DESTACADO"</span> esto es un parrafo;</p>
+ 
+<h2 id="subtitulo">Titulo de nivel cabecera 2</h2>
+ 
+<p>Esto es un parrafo; Esto es un parrafo;.  <a href="#">Esto es ; <em>un enlace</em> a ninguna parte pero sin subrayar y al poner el cursor encima se ve con fondo amarillo y letra color verde</a>, esto es un parrafo; esto es un parrafo;esto es un parrafo; esto es un parrafo; <span class="especial">esto es un parrafo Span Clase "Especial"</span>.esto es un parrafo; esto es un parrafo;esto es un parrafo; esto es un parrafo;</p>
+ 
+<table summary="DESCRIPCION DE LA TABLA Y SU CONTENIDO">
+<caption>TITULO DE LA TABLA</caption>
+<thead>
+  <tr>
+    <th scope="col"></th>
+    <th scope="col" class="especial">Titulo columna 1</th>
+    <th scope="col" class="especial">Titulo columna 2</th>
+  </tr>
+</thead>
+ 
+<tfoot>
+  <tr>
+    <th scope="col"></th>
+    <th scope="col">Titulo columna 1</th>
+    <th scope="col">Titulo columna 2</th>
+  </tr>
+</tfoot>
+ 
+<tbody>
+  <tr>
+    <th scope="row" class="especial">Titulo fila 1</th>
+    <td>  fila 1 col 1</td>
+    <td>  fila 1 <em> col 2 </em></td>
+  </tr>
+  <tr>
+    <th scope="row">Titulo Fila 2</th>
+    <td>  fila 2 <strong>col 1</strong></td>
+    <td>  fila 2 col 2</td>
+  </tr>
+</tbody>
+</table>
+<br><br>
+ 
+<div id="adicional">
+<p>Esto es un parrafo; esto es un parrafo; <span>texto en amarillo</span>.  esto es un parrafo; esto es un parrafo;Esto es un parrafo; esto es un parrafo;esto es un parrafo; esto es un parrafo;</p>
+ 
+<p>Esto es un parrafo; esto es un parrafo;esto es un parrafo; esto es un parrafo; <span id="especial">Este texto es de span "especial" en rojo</span>, esto es un parrafo; esto es un parrafo; esto es un parrafo; esto es un parrafo;esto es un parrafo; esto es un parrafo;esto es un parrafo; esto es un parrafo;.</p>
+ 
+<p>Esto es un parrafo; esto es un parrafo;esto es un parrafo; esto es un parrafo; <a href="#">Este es otro enlace a ninguna parte.. pero sin subrayado y al poner el cursor encima sale con fondo amarillo y letra de color verde</a>, esto es un parrafo; esto es un parrafo;esto es un parrafo; esto es un parrafo;. 
+esto es un parrafo; esto es un parrafo;esto es un parrafo; esto es un parrafo;.</p>
+
+</div>
+
+
+ 
+</body>
+</html>

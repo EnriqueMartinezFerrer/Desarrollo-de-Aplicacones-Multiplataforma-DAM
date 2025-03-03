@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- Ejercicio: PR3_003.xml -->
+<!DOCTYPE paises [
+<!ELEMENT paises (pais, pais, pais)>
+  <!ELEMENT pais (nombre)>
+  <!ELEMENT nombre  (#PCDATA)>
+]>
+
+<paises>
+  <pais>
+<nombre>Espacio</nombre>
+</pais>
+  <pais>
+    <nombre>Noruega</nombre>
+  </pais>
+  <pais>
+    <nombre>Austria</nombre>
+  </pais>
+</paises>
+

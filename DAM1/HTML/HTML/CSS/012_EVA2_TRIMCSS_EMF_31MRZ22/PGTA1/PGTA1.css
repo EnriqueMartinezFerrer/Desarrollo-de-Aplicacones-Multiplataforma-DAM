@@ -1,0 +1,129 @@
+/* cambia y/o Agrega las reglas CSS que faltan  */
+/* No te olvides de agregar el comentrio indicando el numero de regla */
+
+
+body {  
+     background-color: #E50585 /*1*/
+     
+} 
+img{
+	float: left;
+    margin-top: 40px;
+    margin-left: 60px;
+
+}
+#cuerpo{ /*2*/
+    margin: auto;
+    width: 1000px;   
+    background-color: #ee91bc;
+    font-family: Verdana, Geneva, Arial; /*3*/
+}
+.logoreta{ /*1*/
+    float: left;
+    margin-top: 40px;
+    margin-left: 60px;
+
+}
+.logo{ /*4*/
+    float: left;
+    margin-top: 30px;
+    margin-left: 60px;
+    margin-bottom: 30px;
+
+}
+#menu_sup table{ /*5*/
+    background-color: #e50585;
+    color: #a50585;
+    width: 100%;
+    border: medium;
+    border-color: white;
+    
+}
+#menu_sup td{ /*6*/
+    width: 120px;
+    padding: 5px;
+    margin: 3px;
+    background-color: #ffdff7;
+    text-align: center;
+}
+#menu_sup td:hover{ /*7*/
+    color: white;
+    background-color: #e50585;
+}
+
+#titulo{
+    margin:0 auto;  
+    background-position:top;
+    height: 150px;
+    color:white;    
+}
+#titulo h1{
+    padding-top: 25px;
+    padding-left: 350px;
+    padding-right:100px;
+    text-align: center;
+}
+#titulo h2{ /*9*/
+    padding-top: 0px;
+    padding-left: 0px;
+    padding-right: 30px;
+    text-align: right;
+    color:#ffdff7;
+    font-size:small;
+}
+
+#contenido{ /*10*/
+    padding: 30px;
+    text-align: justify;
+}
+
+#contenido h1{ 
+    color:#ffeff7; /*8*/
+    font-family: Arial;
+    padding-bottom: 0;
+    margin:0;
+}
+
+#logo1{ /*11*/
+    float: left;
+    margin-bottom: 15px;
+    margin-right: 15px;
+}
+
+#contenido h3{
+    font-family: Arial;
+    padding-bottom: 0;
+    margin:0;
+    font-size: x-small; 
+}
+.separador{
+    color: #ffeff7;
+    padding: 0;
+    border:0;
+    height: 5px;
+    margin:0;
+}
+.lineafina{
+    height: 2px;
+    
+}
+.enfatizado{
+    font-weight: bold;
+}
+
+img {
+    display: block; 
+    margin: auto;
+    }
+
+#pie{
+    font-size: 10px;
+    text-align: center;
+    padding: 5px;
+    margin: 0;
+}
+.especial {
+    color: white;
+    font-variant: small-caps;
+    font-size: 12px;
+}

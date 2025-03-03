@@ -1,0 +1,42 @@
+Gastos por desplazamiento.............. 25
+Días de desplazamiento................. 2
+Número de pagas extraordinarias........ 2
+
+
+1. PERCEPCIONES
+	- Salariales:
+		Salario base................... 1250,89
+		Antigüedad..................... 0
+		Plus convenios................. 0
+		Complemento personal........... 682,30
+		Horas extra.................... 58,74
+	- No salariales:
+		Plus transporte................ 90,15
+		Gastos de locomoción........... 25 * 2 = 50
+SUMA PERCEPCIONES (TOTAL DEVENGADO) = 1250,89 + 682,30 + 58,74 + 90,15 + 50 = 2132,08
+
+
+2. BASES
+	- BCC (Base de contingencias comunes):
+		RM = SB + A + PC + CP + PT = 2023,34
+		P = ((SB + A + CP) * nº pagas)/12 = 322,20
+		TOTAL = RM + P = 2023,34 + 322,20 = 2345,54
+	- BCP (Base de contingencias profesionales):
+		BCC + HE = 2345,54 + 58,74 = 2404,28
+	- BHE (Base de horas extra):
+		HE = 58,74
+	- BIRPF (Base IRPF):
+		RM + HE = 2023,34 + 58,74 = 2082,08
+
+3. DEDUCCIONES
+	- Seguridad social:
+		Contingencias comunes........4,70%.....4,70% * BCC = 110,24
+		Formación profesional........0,10%.....0,10% * BCP = 2,40
+		Horas extra..................4,70%.....4,70% * BHE = 2,76
+		Desempleo....................1,60%.....1,60% * BCP = 38,47
+	- IRPF:
+		IRPF.........................15%.......15% * BIRPF = 312,31
+TOTAL A DEDUCIR = 110,24 + 2,40 + 2,76 + 38,47 + 312,31 = 466,19
+
+
+LÍQUIDO A - B = TOTAL DEVENGADO - TOTAL A DEDUCIR = 2132,08 - 466,19 = 1665,89

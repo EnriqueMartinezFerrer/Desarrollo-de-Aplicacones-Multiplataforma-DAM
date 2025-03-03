@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- Ejercicio: PR2-002.xml -->
+<!DOCTYPE almacen [
+	<!ELEMENT almacen (producto, producto, producto)>
+	<!ELEMENT producto (referencia, seccion, pasillo, descripcion)>
+	<!ELEMENT referencia (#PCDATA)>
+	<!ELEMENT seccion (#PCDATA)>
+	<!ELEMENT pasillo (#PCDATA)>
+	<!ELEMENT descripcion (#PCDATA)> 
+]>
+<almacen>
+   <producto>
+      <referencia>27.443.23</referencia>
+       <seccion>18</seccion>
+       <pasillo>3</pasillo>
+       <descripcion>Silla SHYO</descripcion>
+    </producto>
+     <producto>
+           <referencia>191.67.689</referencia>
+            <seccion>7</seccion>
+            <pasillo>2 </pasillo>
+            <descripcion>Mesa MHYO</descripcion>
+  </producto>
+   <producto>
+           <referencia>91.67.689</referencia>
+            <seccion>7</seccion>
+            <pasillo>5</pasillo>
+            <descripcion>Taburete THYO</descripcion>
+    </producto>
+</almacen>

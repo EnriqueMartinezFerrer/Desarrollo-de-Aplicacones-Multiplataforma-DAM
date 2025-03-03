@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!--  PR10XML-002.XML -->
+<?xml-stylesheet type="text/xsl" href="PR10-002.xsl"?>  
+<redsocial> 
+	<comentario>
+		<idmensaje>38463</idmensaje>
+		<autor>Alberto</autor>
+		<mensaje>Tengo muchas ganas de que lleguen las vacaciones.</mensaje>
+		<megusta numero="25" />
+	</comentario>
+	<comentario>
+		<idmensaje>38476</idmensaje>
+		<autor>Laura</autor>
+		<mensaje>Yo me iré de vacaciones a París.</mensaje>
+		<megusta numero="18" />
+	</comentario>
+	<comentario>
+		<idmensaje>38482</idmensaje>
+		<autor>Sara</autor>
+		<mensaje>Pues a mi me encanta Londres.</mensaje>
+		<megusta numero="9" />
+	</comentario>
+</redsocial>
+
+
+
+ 

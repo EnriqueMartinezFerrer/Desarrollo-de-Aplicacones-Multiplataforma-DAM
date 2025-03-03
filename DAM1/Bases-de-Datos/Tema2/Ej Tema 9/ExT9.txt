@@ -1,0 +1,32 @@
+Enrique Martínez Ferrer
+1 
+create or replace table EMF_partido like partido;
+insert into EMF_partido
+select * from partido
+where visitante in (select id_equipo from equipo where puntos >= 12),
+and local in (select id_equipo from equipo where puntos >= 12);
+2
+update ignore jugador
+set fecha_alta=interval(fecha_alta + 3 days),
+	jugador default 
+	where altura < max(altura);
+
+
+3
+delete ignore from jugador
+where salario = min(salario) and altura = max(altura);
+
+4.
+delete ignore equipo
+from equipo inner join 
+(select equipo where jugador is null and partido is null);
+
+5
+
+
+
+
+
+
+
+

@@ -1,0 +1,39 @@
+Autor:Enrique Martínez Ferrer
+Ej 1
+USE liga;
+SELECT e.nombre AS "EQUIPO"
+FROM equipo e INNER JOIN jugador j ON id_equipo=equipo
+GROUP BY id_equipo
+HAVING COUNT(id_equipo) >=3 OR COUNT(id_equipo) = 0;
+
+Ej 2
+CREATE OR REPLACE VIEW AS "EMF"
+
+SELECT 
+    e.nombre AS "nombre",
+	max(j.salario) AS "MAXIMO SALARIO",
+	min(j.altura) AS "MINIMO ALTURA"
+FROM equipo e INNER JOIN jugador j ON equipo = e.id_equipo
+WHERE equipo=j.equipo AND id_jugador!=id_capitan
+group by 1;
+
+
+Ej 3
+SELECT 
+    e.nombre AS "EQUIPO",
+	round(avg(j.salario),2) AS "MEDIA SALARIO"
+FROM equipo e INNER JOIN jugador j ON equipo = e.id_equipo
+WHERE j.salario <=105000 AND j.salario>=71666.67 AND e.nombre is not null
+group by 1;
+Ej 4
+SELECT 
+	concat(j.apellido,",",j.nombre) AS "NOMBRE Y APELLIDOS" AND j.apellido,
+	e.nombre AS "EQUIPO",
+	CURDATE(j.fecha_alta) AS "DIAS DE ALTA",
+	avg(CURDATE(j.fecha_alta)) AS "MEDÍA DE DÍAS DE ALTA"
+FROM equipo e INNER JOIN jugador j ON equipo = e.id_equipo
+WHERE j.nombre is not null
+group by 1;
+
+
+

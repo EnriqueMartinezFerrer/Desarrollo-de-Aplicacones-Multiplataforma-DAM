@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+  <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="catalogo">
+    <xs:annotation>
+      <xs:documentation> PGTA1.xml </xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="producto" minOccurs="1" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="calidad">
+                <xs:complexType>
+                  <xs:simpleContent>
+                    <xs:extension base="xs:string">
+                      <xs:attribute name="valor" use="optional">
+                        <xs:simpleType>
+                        <xs:restriction base="xs:int">
+                        <xs:pattern value="[1-10"/>
+                        </xs:restriction>
+                        </xs:simpleType>
+                        </xs:attribute>
+                    </xs:extension>
+                  </xs:simpleContent>
+                </xs:complexType>
+              </xs:element>
+              <xs:element type="xs:string" name="nombre"/>
+              <xs:element type="xs:short" name="referencia"/>
+              <xs:element type="xs:byte" name="stock"/>
+              <xs:element type="xs:byte" name="precio"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

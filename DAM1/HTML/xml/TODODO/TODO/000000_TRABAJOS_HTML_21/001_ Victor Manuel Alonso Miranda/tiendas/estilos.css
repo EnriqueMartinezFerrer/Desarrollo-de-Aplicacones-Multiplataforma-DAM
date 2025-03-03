@@ -1,0 +1,55 @@
+#imgpuerta{
+	float: left;
+	margin-left: 60px;
+	margin-top: 5px;
+}
+#nameshop{
+	font-family: Garamond;
+	font-size: 30px;
+	width: 1300px;
+	float: left;
+
+	text-align: center;
+	margin-top: 40px;
+}
+#textinfo{
+	font-family: Courier New;
+	width: 800px;
+	margin-left: 250px;
+	float: center;
+	text-align: justify;
+	margin-top: 5px;
+
+}	
+#historiainfo{
+	font-family: Courier New;
+	font-size: 17px;
+	width: 1000px;
+	margin-left: 80px;
+	float: left;
+	text-align: justify;
+	margin-top: 60px;
+
+}	
+
+#mapa{
+	margin-left: 180px;
+	float: left;
+
+}
+#historia{
+	background-color: white;
+	width: 100%;
+	height: 805px;
+
+}
+#imghistoria{
+	float: left;
+	margin-left: 60px;
+	margin-top: 60px;
+}
+#volver{
+	float: right;
+	margin-top: 65px;
+	margin-right: 50px;
+}

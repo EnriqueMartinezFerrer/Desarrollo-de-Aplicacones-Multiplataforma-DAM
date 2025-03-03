@@ -1,0 +1,25 @@
+/* MUCHA SUERTE   ....  Y NO COPIES ....  QUE TE ESTOY VIGILANDO*/
+body
+{background:pink;vertical-align:middle;text-align:center;}
+#contenido
+{border:black 10px solid;width:800px;height:500px;text-align:center;}
+#amarillo
+{width:250px;height:150px;float:left;background:yellow;}
+#rojo
+{width:550px;height:150px;float:left;background:red;}
+#azul
+{width:550px;height:300px;float:left;background:blue;}
+#verde
+{width:250px;height:300px;float:left;background:green;}
+#gris
+{width:800px;height:50px;float:left;background:grey;color:white;}
+#amarillo:hover
+{   background-color:red;}
+#rojo:hover
+{   background-color:yellow;}
+#azul:hover
+{   background-color:green;}
+#verde:hover
+{   background-color:blue;}
+#gris:hover
+{color:black;   background-color:white;}

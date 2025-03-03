@@ -1,0 +1,42 @@
+CREATE OR REPLACE DATABASE base1 CHARACTER SET 
+latin1 COLLATE latin1_spanish_ci;
+USE base1
+
+CREATE OR REPLACE TABLE JUGADORES (
+codigo SMALLINT UNSIGNED PRIMARY KEY,
+nombre VARCHAR(20) CHARACTER SET latin1 COLLATE latin1_general_cs NOT NULL,
+primer_apellido VARCHAR(20) CHARACTER SET latin1 COLLATE latin1_general_cs 
+NOT NULL,
+segundo_apellido VARCHAR(20) CHARACTER SET latin1 COLLATE latin1_general_cs 
+NOT NULL,
+fecha_nacimiento DATE DEFAULT (NOW()- INTERVAL 18 YEAR),
+UNIQUE UK_nombre_completo (nombre, primer_apellido, segundo_apellido),
+KEY IK_nombre_completo (nombre, primer_apellido, segundo_apellido),
+CONSTRAINT CH_nombre CHECK(nombre REGEXP '^[A-ZÁÉÍÓÚÑ][azáéíóúüñ]{0,20}$'),
+CONSTRAINT CH_apellido1 CHECK(primer_apellido REGEXP '^[A-ZÁÉÍÓÚÑ][azáéíóúüñ]{0,20}$'),
+CONSTRAINT CH_apellido2 CHECK(segundo_apellido REGEXP '^[A-ZÁÉÍÓÚÑ][azáéíóúüñ]{0,20}$')
+) ENGINE = InnoDb;
+
+
+CREATE OR REPLACE TABLE PARTIDAS (
+numero TINYINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+blancas SMALLINT UNSIGNED NOT NULL,
+negras SMALLINT UNSIGNED NOT NULL,
+resultado ENUM('B','N','T') NOT NULL DEFAULT 'T',
+momento TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+KEY IK_blancas (blancas),
+KEY IK_negras (negras),
+CONSTRAINT FK_blancas FOREIGN KEY (blancas) REFERENCES JUGADORES 
+(codigo) ON UPDATE CASCADE,
+CONSTRAINT FK_negras FOREIGN KEY (negras) REFERENCES JUGADORES 
+(codigo) ON UPDATE CASCADE,
+CONSTRAINT CH_blancas_negras CHECK(blancas<>negras)
+)ENGINE = InnoDb;
+SHOW FULL TABLES FROM siglas;
+
+SHOW COLUMNS FROM jugadores;
+DESC jugadores;
+
+SHOW COLUMNS FROM jugadores LIKE '%n%';
+DESC jugadores '%n%';
+

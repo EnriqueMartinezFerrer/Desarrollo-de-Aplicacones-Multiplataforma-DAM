@@ -1,0 +1,18 @@
+Ejercicio 2
+select elt(weekday(fecha) + 1,"lunes","martes","miercoles","jueves","viernes","sabado","domingo") as "DIA DE LA SEMANA",
+concat(day(fecha)," de ", month(fecha)," del ", year(fecha)) as"FECHA DEL PARTIDO",
+datediff(curdate(),fecha) as "DIAS TRANSCURRIDOS"
+from partido;
+
+Ejercicio 4
+SELECT e.nombre AS "EQUIPO",
+	round(avg(j.salario),2) AS "MEDIA SALARIO"
+FROM equipo e INNER JOIN jugador j ON equipo = e.id_equipo
+WHERE j.salario <=99333.33 AND j.salario>=60000 AND equipo is not null
+group by 1;
+
+Ejercicio 3
+elect altura from jugador
+where altura < (select max(altura) from jugador)
+order by 1 desc
+limit 3;

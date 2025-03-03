@@ -1,0 +1,25 @@
+﻿<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:element name="catalogo">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="libro" minOccurs="1" maxOccurs="unbounded">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="titulo" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+              <xsd:element name="isbn" type="xsd:integer" minOccurs="1" maxOccurs="1"/>
+              <xsd:element name="autores" minOccurs="1" maxOccurs="unbounded">
+                <xsd:complexType>
+                  <xsd:sequence>
+                    <xsd:element name="autor" type="xsd:string" minOccurs="1" maxOccurs="unbounded"/>
+                  </xsd:sequence>
+                </xsd:complexType>
+              </xsd:element>
+              <xsd:element name="paginas" type="xsd:integer" minOccurs="1" maxOccurs="unbounded"/>
+              <xsd:element name="editorial" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>

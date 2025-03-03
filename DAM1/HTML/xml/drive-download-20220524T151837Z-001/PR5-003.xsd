@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- Ejemplo: PR05-003.xsd -->
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<xsd:element name="registro">
+		<xsd:complexType>
+			<xsd:sequence>
+                <xsd:element name="documento" maxOccurs="unbounded">
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element name="referencia" type="xsd:integer" />
+							<xsd:element name="fecha" type="xsd:date" />
+						</xsd:sequence>
+					</xsd:complexType>
+				</xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+</xsd:schema>
+
+ 

@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="pgta2.xsl"?> 
+
+<libros>
+
+ <libro>
+  <titulo>La Celestina</titulo>
+  <autor>Lope de Vega</autor>
+  <isbn>84-9815-002-7</isbn>
+  <precio>25</precio>
+ </libro>
+
+ <libro>
+  <titulo>Fuente Ovejuna</titulo>
+  <autor>Fernando de Rojas</autor>
+  <isbn>84-96390-96-9</isbn>
+  <precio>56</precio>
+ </libro>
+
+ <libro>
+  <titulo>La ciudad de los Perros</titulo>
+  <autor>Mario Vargas LLosa</autor>
+  <isbn>84-9833-002-7</isbn>
+  <precio>32</precio>
+ </libro>
+
+ <libro>
+  <titulo>La Hoguera de las vanidades</titulo>
+  <autor>Thomas Wolf</autor>
+  <isbn>87-9815-002-7</isbn>
+  <precio>22</precio>
+</libro>
+
+</libros>
+
+

@@ -1,0 +1,12 @@
+<HTML>
+<HEAD>
+<TITLE>Ejemplo frames</TITLE>
+</HEAD>
+<FRAMESET COLS="28%,*">
+ <FRAME SRC="menu.html" >
+ <FRAMESET ROWS="15%,*">
+ <FRAME SRC="titulo.html">
+ <FRAME name="principal">
+ </FRAMESET>
+</FRAMESET>
+</HTML>

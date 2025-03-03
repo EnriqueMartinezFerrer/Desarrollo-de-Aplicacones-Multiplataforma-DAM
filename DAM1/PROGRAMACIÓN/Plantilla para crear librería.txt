@@ -1,0 +1,18 @@
+package inicialesCarpeta; 
+
+import java.util.Scanner;
+
+public class lib {
+   public static Scanner lectura = new Scanner(System.in);
+   
+   //EJEMPLO
+   public static String leerString(String texto){
+      System.out.print(texto);
+      return lectura.next();
+   }
+   
+   //PLANTILLA
+   public static tipoDeVariable nombreFuncion(String textoImprimir){
+      System.out.print(textoImprimir);
+   }
+}

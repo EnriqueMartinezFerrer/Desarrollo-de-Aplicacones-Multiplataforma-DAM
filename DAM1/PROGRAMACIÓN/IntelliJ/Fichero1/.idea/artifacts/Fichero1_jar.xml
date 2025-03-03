@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="Fichero1:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/Fichero1_jar</output-path>
+    <root id="archive" name="Fichero1.jar">
+      <element id="module-output" name="Fichero1" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../../DESARROLLO DE INTERFACES/LIBRERIAS/fsg.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>

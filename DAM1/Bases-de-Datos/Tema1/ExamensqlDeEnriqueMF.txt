@@ -1,0 +1,39 @@
+Enrique Martínez Ferrer
+-- Crear la base de datos si no existe
+DROP DATABASE IF EXISTS examen;
+CREATE DATABASE examen CHARACTER SET latin1 COLLATE latin1_spanish_ci;
+USE examen;
+
+-- Crear tabla municipios
+CREATE TABLE municipios (
+    codigo SMALLINT PRIMARY KEY,
+    nombre VARCHAR(40) NOT NULL,
+    presupuesto VARCHAR(15) NOT NULL
+);
+
+-- Crear tabla pisos
+CREATE TABLE pisos (
+    municipio SMALLINT, -- Clave foránea
+    codigo SMALLINT PRIMARY KEY,
+    tipo_via VARCHAR(20), -- Añadido tipo de dato
+    direccion VARCHAR(40) NOT NULL,
+    numero SMALLINT,
+    portal VARCHAR(10), -- Añadido tipo de dato
+    piso VARCHAR(10), -- Añadido tipo de dato
+    puerta VARCHAR(10), -- Añadido tipo
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

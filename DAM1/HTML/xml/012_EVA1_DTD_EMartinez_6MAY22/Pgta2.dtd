@@ -1,0 +1,16 @@
+<!ELEMENT matricula(personal,pago)+>
+<!ELEMENT personal (dni,nombre,titulacion,curso_academico,domicilios,domicilio)>
+<!ELEMENT dni (#PCDATA)>
+<!ELEMENT nombre (#PCDATA)>
+<!ELEMENT titulacion (#PCDATA)>
+<!ELEMENT curso_academico (#PCDATA)>
+<!ELEMENT domicilios (#PCDATA)>
+<!ELEMENT domicilios (domicilio,nombre)>
+<!ELEMENT domicilio (#PCDATA)>
+<!ELEMENT nombre (#PCDATA)>
+<!ELEMENT pago (tipo_matricula)>
+<!ELEMENT tipo_matricula (#PCDATA)>
+<!ELEMENT tipo EMPTY>
+<!ELEMENT tipo (familiar | habitual) "habitual">
+	
+

@@ -1,0 +1,187 @@
+1
+
+insert ignore into equipo
+set id_equipo=14,
+	nombre="Atlético de Madrid",
+	ciudad="Madrid",
+	puntos=0;
+
+2
+
+insert ignore into equipo
+set id_equipo=(select sum(equipo) from jugador),
+	nombre="Real Deprotivo Villaverde",
+	ciudad="Madrid",
+	web=null;
+
+3
+
+insert ignore into equipo (id_equipo,nombre,ciudad,web) values 
+(12,"Real Villaverde","Madrid",default,default),
+(13,"Club Alicante","Alicante","http://www.clubalicante.es/,default");
+
+4
+
+create table copia_equipo like equipo;
+
+insert copia_equipo
+select * from equipo where ciudad="Madrid";
+
+truncate copia_equipo;
+
+5
+
+insert copia_equipo select * from equipo where
+(select avg(salario) from jugador where equipo=id_equipo)<
+(select avg(salario) from jugador where equipo=
+(select id_equipo from equipo where nombre="Real Madrid"));
+
+6
+
+insert copia_equipo select * from equipo where id_equipo in
+(select id_equipo from equipo e 
+inner join partido p on id_equipo in(local,visitante)
+group by 1
+having count(*)=
+(select count(*) from equipo e
+inner join partido p on id_equipo in(local,visitante)
+group by id_equipo
+order by 1 desc limit 1));
+
+12ej
+
+update departamentos
+set departamento=departamento+1
+order by departamento desc;
+
+7
+
+update empleados
+set comision=comision*0.8
+where comision>=10;
+
+8
+
+update empleados
+set salario=salario*2, departamento=2
+where departamento=6 and comision=0;
+
+9
+
+update equipo
+set web=default
+where web is not null;
+
+10
+
+update jugador
+set salario=salario*1.2
+where equipo in (select visitante from partido);
+
+11
+
+update ignore jugador j
+inner join partido p on equipo=visitante
+set salario=salario*1.2;
+
+15ej
+
+update empleados e
+set salario = salario +10
+where salario >(select avg(salario) from empleados where
+departamento= e.departamento);
+
+12
+
+update jugador j inner join 
+equipo e on id_equipo=equipo
+set salario=salario+100,puntos=puntos+1
+where puntos>20;
+
+13
+
+update jugador j
+inner join (select equipo,avg(salario) `media` from jugador group by 1) j2
+using(equipo)
+set salario=salario - 100
+where salario > 100
+and salario > media;
+
+update jugador j
+set salario = salario - 100
+where salario > 100 and salario >
+(select avg(salario) from jugador where equipo=j.equipo);
+
+14
+
+update jugador j
+inner join (select equipo,avg(salario) `media` from jugador group by 1)j2
+using(equipo)
+inner join equipo e 
+on id_equipo=equipo
+set salario=salario - 100
+where salario >100
+and salario > media
+and puntos>20;
+
+15
+
+update ignore jugador j
+inner join (select local, count(*) `veces` from partido group by 1) p
+on equipo=local 
+set altura=altura + 0.01
+where veces>=2;
+
+/////////////////////DELETE (SIEMPRE HACER COPIA DE LA TABLA)/////////////////////
+
+16
+
+create or replace table copia_jugador select * from jugador;
+
+delete ignore from jugador
+where equipo=(select id_equipo from equipo where nombre ="Real Madrid")
+and posicion="pivot";
+
+                      //////////////RECUPERAR TABLA//////////////////
+/////////////insert ignore into jugador select * from copia_jugador;//////////////
+
+17
+
+delete ignore from empleados
+where oficio in ("Vendedor","Cocinero") and departamento!=11;
+
+18
+
+delete ignore from jugador
+where salario>1000 and altura<1.8 and id_capitan!=id_jugador;
+
+19
+
+delete ignore from jugador
+where altura > 2.01 and id_jugador!=id_capitan
+and equipo not in (select visitante from partido);
+
+20
+
+delete ignore jugador from jugador 
+inner join (select equipo,avg(altura)`media` from jugador group by 1) b 
+using (equipo)
+where altura > b.media
+and id_jugador!=id_capitan;
+
+21
+
+delete ignore jugador from jugador 
+inner join (select count(*)`cantidad`,
+equipo from jugador group by equipo) j2
+using (equipo)
+where cantidad>3;
+
+delete ignore from jugador
+where equipo in (select equipo from jugador group by 1 having count(*)>3)
+order by id_jugador = id_capitan;
+
+//////////////////////////////////TRANSACCIONES///////////////////////////////////
+
+create or replace table copia_secciones select * from secciones;
+create or replace table copia_trabajadores select * from trabajadores;

@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- Ejercicio5: - PR05-004.xml -->
+<galeria
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:noNamespaceSchemaLocation="PR5-004_rpta.xsd">
+   <cuadro>
+       <titulo> El atardecer</titulo>
+       <referencia>475</referencia>
+    </cuadro>
+    <cuadro>
+      <titulo> La noche</titulo>
+       <referencia>396</referencia>
+       <autor>Ricardo</autor>
+   </cuadro>
+</galeria> 
+
+
+
+

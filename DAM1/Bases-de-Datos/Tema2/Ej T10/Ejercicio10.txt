@@ -1,0 +1,54 @@
+Enrique Martinez Ferrer
+
+CREATE OR REPLACE FUNCTION insertar_seccion(r ROW TYPE OF secciones)
+-- r.seccion | r.descripcion | r.presupuesto
+CREATE OR REPLACE FUNCTION insertar_seccion(sec TYPE OF secciones.seccion unsigned, 
+des TYPE OF secciones.descripcion,
+pre TYPE OF secciones.presupuesto)
+
+DELIMITER $$
+CREATE OR REPLACE FUNCTION insertar_seccion(sec tinyint(3) unsigned, 
+des varchar(20) COLLATE latin1_spanish_ci,
+pre decimal(9,2) unsigned) RETURNS INT(2)
+
+MODIFIES SQL DATA
+BEGIN
+-- Comprobar que la clave principal no es nula
+	IF sec IS NULL THEN RETURN -5;
+	END IF;
+-- Comprobar que la seccion no esta duplicada
+	IF EXISTS (SELECT * FROM secciones WHERE seccion = sec) THEN RETURN -1;
+	END IF;
+-- Comprobar que la descripcion no esta duplicada
+	IF des IS NOT NULL AND EXISTS (SELECT * FROM secciones WHERE descripcion = des) THEN RETURN -2;
+	END IF;
+-- Comprobar que el presupuesto no es nulo
+	IF pre IS NULL THEN RETURN -3;
+	END IF;
+-- Comprobar que el presupuesto es mayor que 200
+	IF pre <=200 THEN RETURN -4;
+	END IF;
+INSERT IGNORE INTO secciones VALUES (sec,des,pre);
+
+RETURN ROW_COUNT();
+
+END $$
+DELIMITER ;
+
+EJ3
+
+use bd5
+DELIMITER $$
+CREATE OR REPLACE FUNCTION insertar_departamento(r ROW TYPE of departamentos), 
+des type of departamento.descripcion, loc type departamento.localidad
+returns int(2) 
+
+modifies sql data
+begin
+--departamento desconocido
+if dep is null then
+	return -1;
+end if
+--
+
+

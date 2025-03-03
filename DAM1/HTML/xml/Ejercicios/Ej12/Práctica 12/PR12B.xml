@@ -1,0 +1,42 @@
+﻿<?xml version='1.0'?>
+<?xml-stylesheet type="text/xsl" href="pr12b.xsl"?>
+<personas>
+ <persona sexo='varon' relacion='jefe'>
+    <nombre>John </nombre>
+    <apellidos>Smith</apellidos>
+    <nacimiento dia='21' mes='enero' anio='1969'/>
+    <direcciones>
+      <direccion tipo='profesional'>
+       <calle>Avda. Universidad, 30</calle>
+       <poblacion>Leganes</poblacion>
+       <provincia>Madrid</provincia>
+       <cpostal>28905</cpostal>
+      </direccion>
+      <direccion tipo='personal'>
+       <calle>Madrid, 30</calle>
+       <poblacion>Getafe</poblacion>
+       <provincia>Madrid</provincia>
+       <cpostal>28901</cpostal>
+      </direccion>
+    </direcciones>           
+ </persona>
+ <persona sexo='varon' relacion='familiar'>
+    <nombre>Peter </nombre>
+    <apellidos>Houston</apellidos>
+    <nacimiento dia='21' mes='enero' anio='1953'/>
+    <direcciones>
+      <direccion tipo='profesional'>
+       <calle>Avda. Universidad, 10</calle>
+       <poblacion>Leganes</poblacion>
+       <provincia>Madrid</provincia>
+       <cpostal>28905</cpostal>
+      </direccion>
+      <direccion tipo='personal'>
+       <calle>Madrid, 20</calle>
+       <poblacion>Getafe</poblacion>
+       <provincia>Madrid</provincia>
+       <cpostal>28901</cpostal>
+      </direccion>
+    </direcciones>           
+ </persona>
+</personas>

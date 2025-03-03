@@ -1,0 +1,17 @@
+﻿﻿<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	   <xsd:element name="galeria">
+       <xsd:complexType>
+              <xsd:sequence>
+                   <xsd:element name="cuadro" >
+					            <xsd:complexType>
+						           <xsd:sequence>
+							             <xsd:element name="titulo" type="xsd:string" />
+							             <xsd:element name="referencia"  />
+					                 <xsd:element name="autor" type="xsd:string"   />
+						          </xsd:sequence>
+                    </xsd:complexType>
+                  </xsd:element>
+              </xsd:sequence>
+      </xsd:complexType>
+	  </xsd:element>
+</xsd:schema>

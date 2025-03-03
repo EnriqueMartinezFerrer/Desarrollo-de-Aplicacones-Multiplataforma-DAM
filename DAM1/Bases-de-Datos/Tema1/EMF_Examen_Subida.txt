@@ -1,0 +1,35 @@
+//Enrique Martínez Ferrer
+
+Ejercicio 1
+select equipo as "EQUIPO",
+	MAX(salario) AS "MAXIMO SALARIO",
+	MIN(salario) AS "MINIMO SALARIO",
+	ROUND(AVG(salario),2) as "SALARIO MEDIO"
+from jugador
+where equipo is not null and salario is not null 
+group by 1;
+
+Ejercicio 3
+select round(altura,1) "ALTURA*", 
+count(*) "NUMERO DE JUGADORES" 
+from jugador
+where altura is not null AND apellido is not null
+group by 1;
+
+Ejercicio 2
+select posicion as "POSICION",
+	YEAR(fecha_alta) as "AÑO",
+	SUM(DISTINCT altura=altura) as "NUMERO DE ALTURAS DISTINTAS"
+from jugador
+where posicion is not null AND altura is not null AND fecha_alta is not null 
+group by 1;
+
+Ejercicio 4
+select posicion as "POSICION",
+	SUM(year(fecha_alta)=2009) as “2009”,
+	SUM(year(fecha_alta)=2010) as “2010”,
+	SUM(year(fecha_alta)=2011) as “2011”,
+	SUM(year(fecha_alta)=2012) as “2012”
+from jugador
+where altura not between 1.9 AND 2 AND posicion is not null
+group by 1;

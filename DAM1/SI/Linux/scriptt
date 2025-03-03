@@ -1,0 +1,19 @@
+#/bin/bash
+echo "Cual es tu nombre: "
+read name
+name2="Alejandro"
+while [ $name != $name2 ]
+do
+  echo "Cual es tu nombre: "
+read name
+echo "su nombre es: " $name
+echo "El número de lineas es: "
+wc -l script
+echo "años: "
+read edad
+echo "tienes " $edad
+if [ $name != $name2 ]
+then
+echo "el nombre puesto es " $name
+fi
+done

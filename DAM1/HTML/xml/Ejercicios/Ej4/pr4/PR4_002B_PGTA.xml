@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- pregunta pr4-003B.xml -->
+<!DOCTYPE ligaDeFutbol [ 
+ <!ELEMENT ligaDeFutbol (partido+)>
+ <!ELEMENT partido (local, visitante)>
+ <!ELEMENT local (#PCDATA)>
+ <!ATTLIST local goles CDATA #REQUIRED>
+ <!ELEMENT visitante (#PCDATA)>
+ <!ATTLIST visitante goles CDATA #REQUIRED>
+
+]>
+
+<ligaDeFutbol>
+  <partido>
+    <local goles="0">Real Madrid</local>
+    <visitante goles="1">Barcelona</visitante>
+  </partido>
+  <partido>
+    <local goles="3">Valencia</local>
+    <visitante goles="3">Betis</visitante>
+  </partido>
+  <partido>
+    <local goles="4">Rayo Vallecano</local>
+    <visitante goles="2">Leganes</visitante>
+  </partido>
+</ligaDeFutbol>

@@ -1,0 +1,24 @@
+//Enrique Martínez Ferrer
+Use liga
+Select * from jugador;
+Select ucase (concat(apellido," ", nombre)) as "Nombre completo", 
+Date (fecha_alta) as "Fecha de Alta",
+Curdate() as "Fecha Actual",
+Datediff(curdate(), fecha_alta) as "Suma de Días Alta"
+From jugador where apellido is not null and nombre is not null and fecha_alta
++ interval 11 year > curdate();
+
+Ej 2
+Select concat(nombre," ",apellido) as "Nombre completo",
+Altura from jugador where altura between 1.90 and 2.02,
+WHERE  nombre and apellido LIKE 'a__%'
+From jugador;
+
+Ej 3
+Select * From partido
+
+Where Left(Resultado,2) * 1 > Right(Resultado,2)*1 
+and year(Fecha)=2012 and Visitante not in(3,6);
+
+
+

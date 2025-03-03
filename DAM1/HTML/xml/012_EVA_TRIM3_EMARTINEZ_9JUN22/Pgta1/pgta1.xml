@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="pgta1.xsl"?>
+<centro nombre="COLEGIO RETAMAR" web="http://www.retamarfp.es" >
+  <ciclos>
+    <ciclo id="ASIR">
+      <nombre>Administración de Sistemas Informáticos en Red</nombre>
+      <grado>Superior</grado>
+      <decretoTitulo año="2022" />
+    </ciclo>
+    <ciclo id="DAW">
+      <nombre>Desarrollo de Aplicaciones Web</nombre>
+      <grado>Superior</grado>
+      <decretoTitulo año="2022" />
+    </ciclo>
+    <ciclo id="SMR">
+      <nombre>Sistemas Microinformáticos y Redes</nombre>
+      <grado>Medio</grado>
+      <decretoTitulo año="2022" /> 
+    </ciclo>
+  </ciclos>
+</centro>
+
+

@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!DOCTYPE ligaDeFutbol [ 
+  <!ELEMENT ligaDeFutbol (local, visitante)>
+  <!ELEMENT visitante (goles)>
+  <!ELEMENT local (goles)>
+  <!ELEMENT goles (#PCDATA)>
+]>
+
+<ligaDeFutbol>
+  <local>
+    <goles>0</goles>
+  </local>
+  <visitante>
+    <goles>1</goles>  
+  </visitante>
+</ligaDeFutbol>
+

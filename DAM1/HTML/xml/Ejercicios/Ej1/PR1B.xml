@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE camisetas [
+	<!ELEMENT camisetas (camiseta, camiseta)>
+	<!ELEMENT camiseta (color, talla, marca, referencia, precio)>
+	<!ELEMENT color (#PCDATA)>
+	<!ELEMENT talla (#PCDATA)>
+	<!ELEMENT marca (#PCDATA)>
+	<!ELEMENT referencia (#PCDATA)>
+	<!ELEMENT precio (#PCDATA)>
+]>
+<camisetas>
+   <camiseta>
+      <color>blanco</color>
+       <talla>M</talla>
+       <marca>micamiseta</marca>
+       <referencia>173</referencia>
+       <precio>10</precio>
+    </camiseta>
+     <camiseta>
+           <color>azul</color>
+       <talla>L</talla>
+       <marca>micamiseta</marca>
+       <referencia>185</referencia>
+       <precio>12</precio>
+  </camiseta>
+   
+</camisetas>

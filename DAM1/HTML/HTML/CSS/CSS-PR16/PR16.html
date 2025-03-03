@@ -1,0 +1,123 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es">
+<head>
+<title>Formulario de alta - PR16A</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<link rel="stylesheet" type="text/css" href="PR16.css" media="screen" />
+<script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=z1mep2nGStoOiVlLQfr6Fu0Ig6_yVvQaewFtjhZrlBWS6ro7z7m_uDyhh8U29021RCysrboRI8sPVs54nbYS9NrsYLUP2J0CLjrVXsA_y0j_tAYjJHT-bY_OUwNecrn1vRX9_m_31qnVVIrP78eXErXd2oObGrxu8p7V4Y5flVEts6rgUaXero74EuYElT7jayorlx9a5p0cK99D4OZNHjxQ4iXEENc7GXYBhLFehx66x-Z0OrNuiaC0iqDEQ67SfkBfYSdN5b1Vi4iopK2ucu4iaD4eK9o8JsRhfFEoCoy0u8RGMxDFLkkCI1B4ATT__KxrsccsdnlMRf3s6E6rz__pxwQ8gvXvJvdDiCkdUsutAOWq9-DOBtmKAwKnfDxN9DSWcAbF3AsY-AuhyCW0lDLttEjA2PQ0ovez2Yc_10K36TTVBiVXIM1BHD_vGWqSsQ2kUht_2Flq1mO4OFOnwD9yUkXL8eVnk-M7_NKORE8p2dDyVM1DOEcnu_kO13-P0_scPbjAgaZvnRm2qiYAHZL1Y5JlUxuuivQPUnrylZWJy1OndBCKfCjSZ0tkmEYvBdXJ7Mt1qeGb91UUHF1ILNi60WlNQXgrLkxEXmS_I1L1dyoJ4dCcLABJ5W3tTrAgA2l-Y1sjHE_SPAiOmIDAQSk7tOG_uXeyXzV8SKzrnRRBYPyOY0sj7gYDUDfwDUgbp9JnRZGj-xw7L-WfqJ05DxxIc2RytakLMrw_1IvXVSGQO2vs21OLRGFwi7V_uAVBN3Ms_bZJZ4y40vBpOnwIqC5bjAUXYxKrq5ZK9_C6x0DR2M-UC-UdQfRGhyQbOgoVTYQUy-5CwQ7lYtsGqhK4MUkS3E6-_ykSst2jKaQgul9PwKkY3ziwDPvJrdxfYFGOuur7LC03IQWCX56kzcST20eriaP7OCUpiitw3VwLsK2slyOnKzNQFtB8f8jnyiNTrcmGCM2E7EKCuWYP1QsHMOyz88t76LDG1iojJzbskt2CriU70Js4neVmPKq3ef5vH4SIKL7bNKLTYityfUCCDYAISbnaX6y5i9DAKZx6OFT6SHHNki0w8EuWaPn6ax0iAtgRIKJrE3OBcHy-2nt08co26MmbVGvJlqB6HBUbE5xzCk3ogU22IJOhC6E8irfiPr9QK-5ft7cWsccD7MbINM1buu5fx2X4PfLxVJLJvTRPPZMbzFH-E-xs28birIHiH1IVWgipvlbFasp-3ljyE0PL6zPpgK1XoGOViTtZ__eOlWk7_EVrWIOwh8zmzvhAUwz0laP3_nEGU8_eK3EQJ5qJiKBVtpZH6gsbxNW4dWrXS6Wnyho2ukLYkfCp_J7Dq7-8OwaAmytNjUIRLejVFGr6-ciX0p5grBNCnY0-vWQ0FJ_-hTitQ40an4lXaCzo" charset="UTF-8"></script></head>
+
+<body>
+<div id="contenedor">
+
+<h2>Formulario de alta</h2>
+
+<form method="post" action="#">
+<ul>
+<li class="izquierda">
+  <label class="titulo" for="nombre">Nombre y apellidos <span class="requerido">*</span></label>
+  <div>
+    <span class="completo">
+      <input id="nombre" name="nombre" value="" />
+      <label for="nombre">Nombre</label>
+    </span>
+
+    <span class="completo">
+      <input id="apellido1" name="apellido1" value="" />
+      <label for="apellido1">Primer apellido</label>
+    </span>
+    
+    <span class="completo">
+      <input id="apellido2" name="apellido2" value="" />
+      <label for="apellido2">Segundo apellido</label>
+    </span>
+  </div>
+
+  <p class="ayuda">No te olvides de escribir tambien tu segundo apellido</p>
+</li>
+
+<li class="derecha">
+  <label class="titulo" for="direccion">Direccion <span class="requerido">*</span></label>
+
+  <div>
+    <span class="completo">
+      <input id="direccion" name="direccion" value="" />
+      <label for="direccion">Calle, numero, piso, puerta</label>
+    </span>
+
+    <span class="tercio">
+      <input id="codigopostal" name="codigopostal" value="" />
+      <label for="codigopostal">Codigo postal</label>
+    </span>
+    
+    <span class="dostercios">
+      <input id="municipio" name="municipio" value="" />
+      <label for="municipio">Municipio</label>
+    </span>
+    
+    <span class="tercio">
+      <select id="provincia" name="provincia">
+        <option value=""></option>
+        <option value="provincia1">Provincia 1</option>
+        <option value="provincia2">Provincia 2</option>
+        <option value="provincia3">Provincia 3</option>
+      </select>
+      <label for="provincia">Provincia</label>
+    </span>
+    
+    <span class="dostercios">
+      <select id="pais" name="pais">
+        <option value=""></option>
+        <option value="pais1">Pais 1</option>
+        <option value="pais2">Pais 2</option>
+        <option value="pais3">Pais 3</option>
+      </select>
+      <label for="pais">Pais</label>
+    </span>
+  </div>
+
+  <p class="ayuda">El codigo postal es imprescindible para poder recibir los pedidos</p>
+</li>
+
+<li class="izquierda">
+  <label class="titulo" for="email">Email</label>
+
+  <div>
+    <span class="completo">
+      <input id="email" name="email" value="" />
+    </span>
+  </div>
+
+  <p class="ayuda">Asegurate de que sea valido</p>
+</li>
+
+<li class="derecha">
+  <label class="titulo" for="telefonofijo">Telefono <span class="requerido">*</span></label>
+
+  <div>
+    <span class="mitad">
+      <input id="telefonofijo" name="telefonofijo" value="" />
+      <label for="telefonofijo">Fijo</label>
+    </span>
+
+    <span class="mitad">
+      <input id="telefonomovil" name="telefonomovil" value="" />
+      <label for="telefonomovil">Movil</label>
+    </span>
+  </div>
+
+  <p class="ayuda">Sin prefijo de pais y sin espacios en blanco</p>
+</li>
+
+<li class="botones">
+  <input id="alta" type="submit" value="Darme de alta" />
+</li>
+
+</ul>
+</form>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,46 @@
+form fieldset {
+  float: left; 
+  width: 45%;
+
+      } 
+
+form fieldset:hover{
+  background-color: yellow;
+}
+input{
+  padding: 0.3em;
+}
+input:focus{
+  padding: 3px;
+  color: red;
+  border: solid green;
+}
+
+div {
+  margin: .4em 0;
+  }
+
+div label {
+  width: 25%;
+  float: left;
+  }
+
+
+.btn {
+  display: block;
+  margin: 1em 0;
+}
+label{
+  display: block;
+}
+.especial{
+  width: 92%;
+
+}
+
+
+
+
+
+
+

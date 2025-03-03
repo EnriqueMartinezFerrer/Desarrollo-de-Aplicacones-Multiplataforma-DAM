@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Ejemplo: PR11-01.xml -->
+<?xml-stylesheet type="text/xsl" href="PR11-001b.xsl"?>
+ 
+<biblioteca>
+<libro>
+<titulo idioma="es">La vida está en otra parte</titulo> 
+<autor>Milan Kundera</autor>
+<fechaPublicacion año="1973"/>
+</libro>
+<libro>
+<titulo idioma="es">Pantaleón y las visitadoras</titulo>
+<autor>Mario Vargas Llosa</autor>
+<fechaPublicacion año="1973"/>
+</libro>
+<libro>
+<titulo idioma="es">Conversación en la catedral</titulo>
+<autor>Mario Vargas Llosa</autor>
+<fechaPublicacion año="1969"/>
+</libro>
+<libro>
+<titulo idioma="en">Complete Stories and Poems of Edgar Allan Poe</titulo>
+<autor>Edgar Allan Poe</autor>
+<fechaPublicacion año="1890"/>
+</libro>
+<libro>
+<titulo idioma="fr">Les Miserables</titulo>
+<autor>Victor Hugo</autor>
+<fechaPublicacion año="1862"/>
+</libro>
+<libro>
+<titulo idioma="es">Plenilunio</titulo>
+<autor>Antonio Muñoz Molina</autor>
+<fechaPublicacion año="1997"/>
+</libro>
+</biblioteca>
+
+

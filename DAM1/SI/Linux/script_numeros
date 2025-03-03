@@ -1,0 +1,10 @@
+#/bin/bash
+echo "Adivina un número de 1 al 10"
+r=$((( $RANDOM % 10 ) +1))
+read numero
+while [ $numero != $r ]
+do
+echo "Eres un manta, sigue probando"
+read numero
+done
+echo "Muy bien hecho chaval"

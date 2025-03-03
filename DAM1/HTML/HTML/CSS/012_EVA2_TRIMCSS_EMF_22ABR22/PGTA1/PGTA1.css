@@ -1,0 +1,152 @@
+body {  
+	background-color: #E50585;	 /*1*/
+} 
+.logo{
+	margin-top: 20px; /*1*/
+	margin-left: 60px; /*1*/
+	float: left; /*1*/
+}
+#cuerpo{
+	position: absolute;/*2*/
+	width: 1000px;/*2*/
+	background-color: #ee91bc;/*2*/
+	left: 50%;/*2*/
+	margin-left: -500px; /*2*/
+	font-family: Verdana, Geneva, Arial;/*3*/
+}
+.logo1{
+float: left;/*4*//*4*/
+margin-left: 60px;/*4*/
+margin-bottom: 30px;/*4*/
+}
+
+table{
+	background-color: #E50585;/*5*/
+	color: #a50585;/*5*/
+	width: 100%;/*5*/
+	border: medium white;/*5*/
+	font-weight: bold;/*5*/
+
+}
+#menu_sup td:hover{
+	color: white;/*7*/
+	background-color: #E50585;/*7*/
+}
+#menu_sup td{
+	width: 120px;/*6*/
+	padding: 5px;/*6*/
+	margin: 3px;/*6*/
+	text-align: center;/*6*/
+	background-color: #ffdff7;/*6*/
+}
+#titulo {
+	margin:0 auto; 	
+	background-position:top;
+	height: 150px;
+	color:white;
+	text-align: right;	
+}
+#titulo h1{
+	padding-top: 25px;
+	padding-left: 350px;
+	padding-right:100px;
+	text-align: center;
+}
+#titulo h2{
+	padding-top: 0px;
+	padding-left: 0px;
+	padding-right: 30px;
+	text-align: right;/*9*/
+	color:#ffdff7;
+	font-size:small;/*9*/
+	color: #ffdff7;
+}
+#contenido{
+	padding: 30px;/*10*/
+	text-align: justify;/*10*/
+}
+#contenido h1{
+	color:#ffeff7;/*8*/
+	font-family: Arial;
+	padding-bottom: 0;
+	margin:0;
+}
+#contenido h3{
+	font-family: Arial;
+	padding-bottom: 0;
+	margin:0;
+	font-size: x-small;	
+}
+.separador{
+	color: #ffeff7;
+	padding: 0;
+	border:0;
+	height: 5px;
+  	margin:0;
+}
+.lineafina{
+	height: 2px;
+	
+}
+.enfatizado{
+	font-weight: bold;
+}
+/*13*/
+#ladoizquierdo{
+	width: 300px;
+	float: left;
+	margin-left: 10px;
+	background-color: orange;
+	display: inline;
+	text-align: justify;
+}
+/*13*/
+#centro{
+	width: 300px;
+	margin-left: 10px;
+	background-color: green;
+	display: inline;
+	float: left;
+	text-align: justify;
+}
+/*13*/
+#ladoderecho{
+	width: 300px;
+	float: left;
+	margin-left: 10px;
+	background-color: yellow;
+	display: inline;
+	text-align: justify;
+}
+/*14*/
+#ladoderecho p img{
+	float: right;
+	padding: 5px;
+}
+/*15*/
+a{
+	color: #ffdff7;
+	text-decoration: none;
+	font-weight: bold;
+}
+.debajo{
+	display: block;
+}
+img {
+	display: block; 
+	margin: auto;
+	float: left;
+	margin-right: 15px;/*11*/
+	margin-bottom: 15px;/*11*/
+	}
+#pie{
+	font-size: 10px;
+	text-align: center;
+	padding: 5px;
+	margin: 0;
+}
+.especial {
+	color: white;
+	font-variant: small-caps;
+	font-size: 12px;
+}

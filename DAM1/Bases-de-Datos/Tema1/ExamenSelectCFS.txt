@@ -1,0 +1,27 @@
+Ejercicio 1.
+
+use bd5;
+
+select * from empleados; 
+
+select ucase(concat(apellido1," ",apellido2,", ",nombre)) as "Nombre y Apellidos",
+datediff(curdate(),fecha_alta) as "Dias de alta",
+truncate(salario/1000,1) as "Salario en miles"
+from empleados;
+
+
+Ejercicio 2.
+
+
+select left(oficio,3) as "OFICIO",
+jefe as "JEFE",
+elt(month(fecha_alta),"Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto",
+"Septiembre","Octubre","Noviembre","Diciembre") as "MES DE ALTA"
+from empleados;
+
+Ejercicio 3.
+
+select concat(nombre," gana ",truncate(salario,0)," euros y fue dado de alta el ",
+day(fecha_alta)," del ",month(fecha_alta)," del ",year(fecha_alta)) as "EMPLEADO"
+from empleados; 
+

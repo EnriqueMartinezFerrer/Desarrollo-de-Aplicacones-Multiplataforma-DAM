@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet type="text/xsl" href="pgta3.xsl" ?> 
+<ciclos>
+  <ciclo nombre="ASIR" curso="1">
+    <alumnos>
+      <alumno nombre="Jose " apellidos="Mourihno Ramos"> 
+        <modulo nombre="FHw">5.6</modulo>
+        <modulo nombre="BD">3</modulo>
+        <modulo nombre="FOL">7</modulo>
+        <modulo nombre="XML">6.3</modulo>
+        <modulo nombre="ISO">9</modulo>
+        <modulo nombre="PAR">4</modulo>
+      </alumno>
+      <alumno nombre="Carlo" apellidos="Anchelotti García">
+        <modulo nombre="FHw">3</modulo>
+        <modulo nombre="BD">9.2</modulo>
+        <modulo nombre="FOL">6</modulo>
+        <modulo nombre="XML">7.3</modulo>
+        <modulo nombre="ISO">1</modulo>
+        <modulo nombre="PAR">4</modulo>
+      </alumno>
+      <alumno nombre="Diego " apellidos="Simeone Gómez">
+        <modulo nombre="FHw">0</modulo>
+        <modulo nombre="BD">10</modulo>
+        <modulo nombre="FOL">3</modulo>
+        <modulo nombre="XML">8.3</modulo>
+        <modulo nombre="ISO">9</modulo>
+        <modulo nombre="PAR">9</modulo>
+      </alumno>
+    </alumnos>
+  </ciclo>
+  <ciclo nombre="DAM" curso="1">
+    <alumnos>
+      <alumno nombre="Mariano" apellidos="Rajoy Leyva">
+        <modulo nombre="BD">8</modulo>
+        <modulo nombre="PRO">9</modulo>
+        <modulo nombre="XML">2.3</modulo>
+        <modulo nombre="IE">6</modulo>
+      </alumno>
+      <alumno nombre="Pedro" apellidos="Sanchez Garcia">
+        <modulo nombre="BD">8</modulo>
+        <modulo nombre="PRO">7</modulo>
+        <modulo nombre="XML">4.6</modulo>
+        <modulo nombre="IE">3</modulo>
+      </alumno>
+      <alumno nombre="Albert" apellidos="Rivera Rodríguez">
+        <modulo nombre="BD">4</modulo>
+        <modulo nombre="PRO">1.4</modulo>
+        <modulo nombre="XML">2.3</modulo>
+        <modulo nombre="IE">6</modulo>
+      </alumno>
+      <alumno nombre=" Pablo" apellidos="Iglesia Sanz">
+        <modulo nombre="BD">2.6</modulo>
+        <modulo nombre="PRO">5</modulo>
+        <modulo nombre="XML">2</modulo>
+        <modulo nombre="IE">9</modulo>
+      </alumno>
+    </alumnos>
+  </ciclo>
+</ciclos>

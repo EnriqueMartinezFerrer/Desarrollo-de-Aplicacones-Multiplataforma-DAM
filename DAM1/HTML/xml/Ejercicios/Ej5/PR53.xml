@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<registro 
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:noNamespaceSchemaLocation="PR5-003.xsd"> 
+  <documento>
+    <referencia>1234</referencia>
+    <fecha>1997-06-27</fecha>
+  </documento>
+</registro>

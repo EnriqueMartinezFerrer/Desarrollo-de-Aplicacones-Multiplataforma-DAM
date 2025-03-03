@@ -1,0 +1,30 @@
+﻿<?xml version="1.0"?>
+<prensa   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:noNamespaceSchemaLocation="pgta2.xsd"> 
+
+	 <diario>
+      <nombre>ABC</nombre>
+      <codigo>1515</codigo>
+	  <fecha>2022-05-23</fecha>
+	  <publicado>true</publicado>
+	  <clasificacion  perfil_politico="Derecha"/>  
+	 </diario>
+	
+	<diario>
+	   <codigo>1414</codigo>
+	   <fecha>2022-05-24</fecha>
+       <nombre>El Pais</nombre>
+	   <publicado>true</publicado>
+	   <clasificacion perfil_politico="Izquierda"/> 
+	 </diario>
+
+
+    <diario>
+      <fecha>2022-04-30</fecha>
+      <codigo>1616</codigo>
+	   <nombre>La Razon</nombre>
+	   <publicado>false</publicado>
+	   <clasificacion perfil_politico="Centro" />
+	 </diario>
+
+</prensa>
+
